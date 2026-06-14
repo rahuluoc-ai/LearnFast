@@ -1,0 +1,2 @@
+# LearnFast
+Learn everything fast
