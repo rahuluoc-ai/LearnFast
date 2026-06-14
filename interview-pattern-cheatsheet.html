@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Pattern Cheatsheet</title>
+<style>
+  :root{
+    --ink:#1b1e26; --muted:#5c6370; --faint:#8a909b; --line:#e3e6ea;
+    --paper:#ffffff; --bg:#eceef1; --accent:#3b4fd6;
+    --arr:#2563eb; --tree:#0f9d6b; --dp:#c2410c; --struct:#7c3aed; --misc:#475569;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.45;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:1000px;margin:0 auto;background:var(--paper);padding:34px 38px 44px}
+
+  .masthead{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+  h1{font-size:24px;font-weight:700;letter-spacing:-.4px}
+  .masthead .tag{color:var(--muted);font-size:12.5px;font-family:var(--mono)}
+  .printbtn{background:var(--ink);color:#fff;border:none;font-family:var(--sans);font-size:12px;padding:8px 14px;border-radius:7px;cursor:pointer}
+  .printbtn:hover{background:#000}
+
+  h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin:24px 0 11px}
+
+  .band{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;margin-bottom:6px}
+  .triage ol{list-style:none;counter-reset:t}
+  .triage li{counter-increment:t;position:relative;padding:6px 0 6px 30px;font-size:13px;border-bottom:1px solid var(--line)}
+  .triage li:last-child{border-bottom:none}
+  .triage li::before{content:counter(t);position:absolute;left:0;top:6px;width:19px;height:19px;background:var(--ink);color:#fff;border-radius:50%;font-family:var(--mono);font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:600}
+  .triage b{font-weight:600}
+  .triage .q{color:var(--muted)}
+
+  table.cx{width:100%;border-collapse:collapse;font-size:12.5px}
+  table.cx th,table.cx td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--line)}
+  table.cx th{font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--faint);font-weight:600}
+  table.cx td:first-child{font-family:var(--mono);color:var(--accent);white-space:nowrap}
+  table.cx td:last-child{font-family:var(--mono);font-weight:600;white-space:nowrap}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .card{border:1px solid var(--line);border-left:3px solid var(--g,var(--misc));border-radius:8px;padding:11px 13px;break-inside:avoid}
+  .card .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+  .card .name{font-weight:700;font-size:14px}
+  .card .bigo{font-family:var(--mono);font-size:11px;color:#fff;background:var(--g,var(--misc));padding:1px 7px;border-radius:20px;white-space:nowrap}
+  .card .trig{font-family:var(--mono);font-size:11.5px;color:var(--ink);background:#f1f3f6;border-radius:5px;padding:4px 7px;margin-bottom:6px;line-height:1.5}
+  .card .row{font-size:12.5px;margin-top:3px}
+  .card .row .lbl{color:var(--faint);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.5px;margin-right:4px}
+  .card .gotcha{color:var(--dp)}
+
+  .g-arr{--g:var(--arr)} .g-tree{--g:var(--tree)} .g-dp{--g:var(--dp)} .g-struct{--g:var(--struct)} .g-misc{--g:var(--misc)}
+
+  .rescue{border:1px dashed var(--faint);border-radius:8px;padding:12px 15px;margin-top:8px;font-size:12.5px}
+  .rescue b{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--faint);margin-bottom:6px}
+  .rescue span{display:inline-block;background:#f1f3f6;border-radius:5px;padding:3px 9px;margin:2px 3px 2px 0;font-size:12px}
+
+  footer{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--faint);text-align:center}
+
+  @media (max-width:720px){.band{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.sheet{padding:22px 16px}}
+  @media print{
+    body{background:#fff} .sheet{max-width:none;padding:0} .printbtn{display:none}
+    h2{margin-top:16px} .card{box-shadow:none}
+    @page{margin:14mm}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div>
+      <h1>Interview pattern cheatsheet</h1>
+      <div class="tag">read the signal &rarr; reach for the tool · NeetCode 150 patterns</div>
+    </div>
+    <button class="printbtn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div class="band">
+    <div class="triage">
+      <h2>The 60-second triage</h2>
+      <ol>
+        <li><b>Name the input.</b> <span class="q">Array/string? Tree? Graph/grid? Intervals? A number? Sorted? Duplicates?</span></li>
+        <li><b>Name the verb.</b> <span class="q">Find / count ways / optimize (min·max) / generate all / order / check feasible — the verb names the family.</span></li>
+        <li><b>Read the constraints.</b> <span class="q">n tells you the target Big-O (table &rarr;), which rules patterns in or out.</span></li>
+        <li><b>State brute force out loud,</b> <span class="q">then cut repeated work: a hash map, a sort, two pointers, or caching (DP).</span></li>
+        <li><b>Confirm before coding.</b> <span class="q">Restate approach + complexity to the interviewer, then write.</span></li>
+      </ol>
+    </div>
+    <div>
+      <h2>Constraints &rarr; target complexity</h2>
+      <table class="cx">
+        <tr><th>Input size n</th><th>Aim for</th><th>Likely</th></tr>
+        <tr><td>n &le; 12</td><td>permutations</td><td>O(n!)</td></tr>
+        <tr><td>n &le; 20&ndash;25</td><td>subset / bitmask</td><td>O(2ⁿ)</td></tr>
+        <tr><td>n &le; 500</td><td>DP, triple loop</td><td>O(n³)</td></tr>
+        <tr><td>n &le; 5,000</td><td>DP, nested loop</td><td>O(n²)</td></tr>
+        <tr><td>n &le; 10⁵&ndash;10⁶</td><td>sort / window / heap</td><td>O(n log n)</td></tr>
+        <tr><td>n &gt; 10⁶</td><td>single pass / math</td><td>O(n), O(log n)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2>Arrays &amp; strings</h2>
+  <div class="grid">
+    <div class="card g-arr">
+      <div class="top"><span class="name">Hashing</span><span class="bigo">O(n)</span></div>
+      <div class="trig">"duplicate" · "frequency" · "seen before" · "count" · "lookup"</div>
+      <div class="row"><span class="lbl">Do</span>One pass, store counts / indices in a dict or set.</div>
+      <div class="row"><span class="lbl">Use</span>HashMap, HashSet</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Trading space for speed — confirm O(n) memory is OK.</div>
+    </div>
+    <div class="card g-arr">
+      <div class="top"><span class="name">Two pointers</span><span class="bigo">O(n)</span></div>
+      <div class="trig">"sorted array" · "pair / triplet sum" · "palindrome" · "in place"</div>
+      <div class="row"><span class="lbl">Do</span>Converge from both ends, or run two same-direction pointers.</div>
+      <div class="row"><span class="lbl">Use</span>Sorted array, lo/hi indices</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Skip equal neighbors to avoid duplicate triplets (3Sum).</div>
+    </div>
+    <div class="card g-arr">
+      <div class="top"><span class="name">Sliding window</span><span class="bigo">O(n)</span></div>
+      <div class="trig">"longest / shortest" · "contiguous" · "substring" · "min window"</div>
+      <div class="row"><span class="lbl">Do</span>Grow right; shrink left while the window breaks the constraint.</div>
+      <div class="row"><span class="lbl">Use</span>Two indices + a window count/map</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Decide fixed vs variable size, and the exact shrink condition.</div>
+    </div>
+    <div class="card g-arr">
+      <div class="top"><span class="name">Stack</span><span class="bigo">O(n)</span></div>
+      <div class="trig">"matching / valid" · "next greater / smaller" · "nested" · "histogram"</div>
+      <div class="row"><span class="lbl">Do</span>Push unresolved items; pop on match. Monotonic stack for next-greater.</div>
+      <div class="row"><span class="lbl">Use</span>Stack (often of indices)</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>For next-greater, store indices, not values.</div>
+    </div>
+    <div class="card g-arr">
+      <div class="top"><span class="name">Binary search</span><span class="bigo">O(log n)</span></div>
+      <div class="trig">"sorted" · "minimize the max" · "smallest / largest x such that"</div>
+      <div class="row"><span class="lbl">Do</span>Halve the space; or binary-search the answer when feasibility is monotonic.</div>
+      <div class="row"><span class="lbl">Use</span>lo/hi bounds, mid check</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Pick one convention (lo&le;hi vs lo&lt;hi) and keep mid moves consistent.</div>
+    </div>
+    <div class="card g-arr">
+      <div class="top"><span class="name">Intervals</span><span class="bigo">O(n log n)</span></div>
+      <div class="trig">"overlap" · "merge ranges" · "meeting rooms" · "scheduling"</div>
+      <div class="row"><span class="lbl">Do</span>Sort by start (sometimes end), then sweep comparing to the previous.</div>
+      <div class="row"><span class="lbl">Use</span>Sort + sweep / min-heap of ends</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Overlap test is prev.end &gt; curr.start (mind &ge; vs &gt;).</div>
+    </div>
+  </div>
+
+  <h2>Data structures</h2>
+  <div class="grid">
+    <div class="card g-struct">
+      <div class="top"><span class="name">Linked list</span><span class="bigo">O(n)</span></div>
+      <div class="trig">"reverse" · "cycle" · "k-group" · "merge lists" · "nth from end"</div>
+      <div class="row"><span class="lbl">Do</span>Use dummy head, fast/slow pointers, or in-place reversal.</div>
+      <div class="row"><span class="lbl">Use</span>Dummy node, Floyd's cycle detection, prev/curr pointers</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Save next before reversing; handle odd-length lists for middle.</div>
+    </div>
+  </div>
+
+  <h2>Trees &amp; graphs</h2>
+  <div class="grid">
+    <div class="card g-tree">
+      <div class="top"><span class="name">DFS</span><span class="bigo">O(V+E)</span></div>
+      <div class="trig">"explore all paths" · "subtree" · "connected" · "reachable"</div>
+      <div class="row"><span class="lbl">Do</span>Recurse / explicit stack. Decide what to return up vs pass down.</div>
+      <div class="row"><span class="lbl">Use</span>Recursion, visited set (graphs)</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Graphs need a visited set; trees usually don't.</div>
+    </div>
+    <div class="card g-tree">
+      <div class="top"><span class="name">BFS</span><span class="bigo">O(V+E)</span></div>
+      <div class="trig">"level order" · "shortest path (unweighted)" · "nearest / fewest steps"</div>
+      <div class="row"><span class="lbl">Do</span>Queue, process layer by layer; first time you reach a node is shortest.</div>
+      <div class="row"><span class="lbl">Use</span>Queue, visited set</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Mark visited when enqueuing, not when dequeuing.</div>
+    </div>
+    <div class="card g-tree">
+      <div class="top"><span class="name">Topological sort</span><span class="bigo">O(V+E)</span></div>
+      <div class="trig">"prerequisites" · "build / course order" · "dependency" · "DAG"</div>
+      <div class="row"><span class="lbl">Do</span>Kahn's: repeatedly remove zero-indegree nodes; or DFS post-order.</div>
+      <div class="row"><span class="lbl">Use</span>Indegree array + queue</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>If not all nodes get ordered, there's a cycle &rarr; impossible.</div>
+    </div>
+    <div class="card g-tree">
+      <div class="top"><span class="name">Union-Find</span><span class="bigo">~O(α n)</span></div>
+      <div class="trig">"connectivity" · "components" · "detect cycle" · "merge groups"</div>
+      <div class="row"><span class="lbl">Do</span>parent[] with union-by-rank + path compression.</div>
+      <div class="row"><span class="lbl">Use</span>Disjoint Set Union</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Cycle found when union of two already-joined nodes fails.</div>
+    </div>
+    <div class="card g-tree">
+      <div class="top"><span class="name">Weighted shortest path</span><span class="bigo">O(E log V)</span></div>
+      <div class="trig">"shortest / cheapest path" · "weights" · "min cost to reach"</div>
+      <div class="row"><span class="lbl">Do</span>Dijkstra (non-negative). Bellman-Ford if negative edges / K-stops limit.</div>
+      <div class="row"><span class="lbl">Use</span>Min-heap of (dist, node)</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Dijkstra breaks with negative weights — switch algorithm.</div>
+    </div>
+    <div class="card g-tree">
+      <div class="top"><span class="name">Trie</span><span class="bigo">O(L)</span></div>
+      <div class="trig">"prefix" · "autocomplete" · "dictionary of words" · "starts with"</div>
+      <div class="row"><span class="lbl">Do</span>Character tree, end-of-word flag on terminal nodes.</div>
+      <div class="row"><span class="lbl">Use</span>Nested maps / children array</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Board search (Word Search II) = Trie + DFS together.</div>
+    </div>
+  </div>
+
+  <h2>Optimization: search, greedy, DP</h2>
+  <div class="grid">
+    <div class="card g-dp">
+      <div class="top"><span class="name">Backtracking</span><span class="bigo">O(2ⁿ)/O(n!)</span></div>
+      <div class="trig">"all subsets / permutations / combinations" · "generate every"</div>
+      <div class="row"><span class="lbl">Do</span>Choose &rarr; recurse &rarr; undo. Prune branches that can't succeed.</div>
+      <div class="row"><span class="lbl">Use</span>Recursion + path list</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Append a <i>copy</i> of the path to results, not the live list.</div>
+    </div>
+    <div class="card g-dp">
+      <div class="top"><span class="name">Heap / priority queue</span><span class="bigo">O(n log k)</span></div>
+      <div class="trig">"top K" · "Kth largest" · "stream" · "median" · "merge K"</div>
+      <div class="row"><span class="lbl">Do</span>Keep a size-K heap; two heaps (max+min) for a running median.</div>
+      <div class="row"><span class="lbl">Use</span>Min-heap / max-heap</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>For K <i>largest</i>, keep a <i>min</i>-heap of size K.</div>
+    </div>
+    <div class="card g-dp">
+      <div class="top"><span class="name">Greedy</span><span class="bigo">O(n log n)</span></div>
+      <div class="trig">"take best option now" · "maximize / minimize" + sortable</div>
+      <div class="row"><span class="lbl">Do</span>Sort, then commit to the locally best choice each step.</div>
+      <div class="row"><span class="lbl">Use</span>Sort + running state</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>If you can't argue the local choice is safe, it's probably DP.</div>
+    </div>
+    <div class="card g-dp">
+      <div class="top"><span class="name">1-D DP</span><span class="bigo">O(n)</span></div>
+      <div class="trig">"count ways" · "min / max" · "can reach" · overlapping subproblems</div>
+      <div class="row"><span class="lbl">Do</span>Define dp[i] from earlier states; memoize, then go bottom-up.</div>
+      <div class="row"><span class="lbl">Use</span>1-D array / two variables</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Get the state definition + base case right before the recurrence.</div>
+    </div>
+    <div class="card g-dp">
+      <div class="top"><span class="name">2-D DP</span><span class="bigo">O(m·n)</span></div>
+      <div class="trig">"two strings" · "grid paths" · state needs two indices</div>
+      <div class="row"><span class="lbl">Do</span>Fill a dp[i][j] table from its neighbors (often i-1, j-1).</div>
+      <div class="row"><span class="lbl">Use</span>2-D table</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Seed the base row/column; watch off-by-one on string lengths.</div>
+    </div>
+    <div class="card g-misc">
+      <div class="top"><span class="name">Math &amp; geometry</span><span class="bigo">O(n)–O(n²)</span></div>
+      <div class="trig">"matrix" · "spiral" · "rotate" · "pow" · "geometry" · "simulate"</div>
+      <div class="row"><span class="lbl">Do</span>Use math identities, layer-by-layer traversal, or coordinate hashing.</div>
+      <div class="row"><span class="lbl">Use</span>Matrix indices, fast exponentiation, hash map of points</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>Watch overflow on pow/reverse integer; in-place matrix needs cycle tracking.</div>
+    </div>
+    <div class="card g-misc">
+      <div class="top"><span class="name">Bit manipulation</span><span class="bigo">O(1)/O(b)</span></div>
+      <div class="trig">"without +/-" · "single number" · "count bits" · "power of two"</div>
+      <div class="row"><span class="lbl">Do</span>XOR, AND/OR masks, shifts.</div>
+      <div class="row"><span class="lbl">Use</span>Bit ops</div>
+      <div class="row gotcha"><span class="lbl">Gotcha</span>XOR cancels pairs; <code>n &amp; (n-1)</code> clears the lowest set bit.</div>
+    </div>
+  </div>
+
+  <div class="rescue">
+    <b>If you freeze — run through these</b>
+    <span>Can I sort it?</span>
+    <span>Would a hash map kill the nested loop?</span>
+    <span>Two pointers after sorting?</span>
+    <span>What subresult could I cache?</span>
+    <span>Is it secretly a graph?</span>
+    <span>Draw it on 3 small inputs.</span>
+    <span>Solve brute force, then optimize.</span>
+    <span>What does the constraint size hint at?</span>
+  </div>
+
+  <footer>Spot the signal first, pick the structure second, then code. Same drill every time.</footer>
+</div>
+</body>
+</html>

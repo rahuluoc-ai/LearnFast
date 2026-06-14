@@ -1,0 +1,269 @@
+{
+  "categories": [
+    "Arrays & Hashing",
+    "Two Pointers",
+    "Sliding Window",
+    "Stack",
+    "Binary Search",
+    "Linked List",
+    "Trees",
+    "Heap / Priority Queue",
+    "Backtracking",
+    "Tries",
+    "Graphs",
+    "Advanced Graphs",
+    "1-D Dynamic Programming",
+    "2-D Dynamic Programming",
+    "Greedy",
+    "Intervals",
+    "Math & Geometry",
+    "Bit Manipulation"
+  ],
+  "patterns": [
+    {
+      "id": "hashing",
+      "name": "Hashing",
+      "group": "Arrays & Strings",
+      "complexity": "O(n)",
+      "signals": ["duplicate", "frequency", "seen before", "count", "lookup"],
+      "do": "One pass, store counts / indices in a dict or set.",
+      "use": "HashMap, HashSet",
+      "gotcha": "Trading space for speed — confirm O(n) memory is OK.",
+      "color": "arr"
+    },
+    {
+      "id": "two-pointers",
+      "name": "Two pointers",
+      "group": "Arrays & Strings",
+      "complexity": "O(n)",
+      "signals": ["sorted array", "pair / triplet sum", "palindrome", "in place"],
+      "do": "Converge from both ends, or run two same-direction pointers.",
+      "use": "Sorted array, lo/hi indices",
+      "gotcha": "Skip equal neighbors to avoid duplicate triplets (3Sum).",
+      "color": "arr"
+    },
+    {
+      "id": "sliding-window",
+      "name": "Sliding window",
+      "group": "Arrays & Strings",
+      "complexity": "O(n)",
+      "signals": ["longest / shortest", "contiguous", "substring", "min window"],
+      "do": "Grow right; shrink left while the window breaks the constraint.",
+      "use": "Two indices + a window count/map",
+      "gotcha": "Decide fixed vs variable size, and the exact shrink condition.",
+      "color": "arr"
+    },
+    {
+      "id": "stack",
+      "name": "Stack",
+      "group": "Arrays & Strings",
+      "complexity": "O(n)",
+      "signals": ["matching / valid", "next greater / smaller", "nested", "histogram"],
+      "do": "Push unresolved items; pop on match. Monotonic stack for next-greater.",
+      "use": "Stack (often of indices)",
+      "gotcha": "For next-greater, store indices, not values.",
+      "color": "arr"
+    },
+    {
+      "id": "binary-search",
+      "name": "Binary search",
+      "group": "Arrays & Strings",
+      "complexity": "O(log n)",
+      "signals": ["sorted", "minimize the max", "smallest / largest x such that"],
+      "do": "Halve the space; or binary-search the answer when feasibility is monotonic.",
+      "use": "lo/hi bounds, mid check",
+      "gotcha": "Pick one convention (lo≤hi vs lo<hi) and keep mid moves consistent.",
+      "color": "arr"
+    },
+    {
+      "id": "intervals",
+      "name": "Intervals",
+      "group": "Arrays & Strings",
+      "complexity": "O(n log n)",
+      "signals": ["overlap", "merge ranges", "meeting rooms", "scheduling"],
+      "do": "Sort by start (sometimes end), then sweep comparing to the previous.",
+      "use": "Sort + sweep / min-heap of ends",
+      "gotcha": "Overlap test is prev.end > curr.start (mind ≥ vs >).",
+      "color": "arr"
+    },
+    {
+      "id": "linked-list",
+      "name": "Linked list",
+      "group": "Data Structures",
+      "complexity": "O(n)",
+      "signals": ["reverse", "cycle", "k-group", "merge lists", "nth from end"],
+      "do": "Use dummy head, fast/slow pointers, or in-place reversal.",
+      "use": "Dummy node, Floyd's cycle detection, prev/curr pointers",
+      "gotcha": "Save next before reversing; handle odd-length lists for middle.",
+      "color": "struct"
+    },
+    {
+      "id": "dfs",
+      "name": "DFS",
+      "group": "Trees & Graphs",
+      "complexity": "O(V+E)",
+      "signals": ["explore all paths", "subtree", "connected", "reachable"],
+      "do": "Recurse / explicit stack. Decide what to return up vs pass down.",
+      "use": "Recursion, visited set (graphs)",
+      "gotcha": "Graphs need a visited set; trees usually don't.",
+      "color": "tree"
+    },
+    {
+      "id": "bfs",
+      "name": "BFS",
+      "group": "Trees & Graphs",
+      "complexity": "O(V+E)",
+      "signals": ["level order", "shortest path (unweighted)", "nearest / fewest steps"],
+      "do": "Queue, process layer by layer; first time you reach a node is shortest.",
+      "use": "Queue, visited set",
+      "gotcha": "Mark visited when enqueuing, not when dequeuing.",
+      "color": "tree"
+    },
+    {
+      "id": "topological-sort",
+      "name": "Topological sort",
+      "group": "Trees & Graphs",
+      "complexity": "O(V+E)",
+      "signals": ["prerequisites", "build / course order", "dependency", "DAG"],
+      "do": "Kahn's: repeatedly remove zero-indegree nodes; or DFS post-order.",
+      "use": "Indegree array + queue",
+      "gotcha": "If not all nodes get ordered, there's a cycle → impossible.",
+      "color": "tree"
+    },
+    {
+      "id": "union-find",
+      "name": "Union-Find",
+      "group": "Trees & Graphs",
+      "complexity": "~O(α n)",
+      "signals": ["connectivity", "components", "detect cycle", "merge groups"],
+      "do": "parent[] with union-by-rank + path compression.",
+      "use": "Disjoint Set Union",
+      "gotcha": "Cycle found when union of two already-joined nodes fails.",
+      "color": "tree"
+    },
+    {
+      "id": "weighted-shortest-path",
+      "name": "Weighted shortest path",
+      "group": "Trees & Graphs",
+      "complexity": "O(E log V)",
+      "signals": ["shortest / cheapest path", "weights", "min cost to reach"],
+      "do": "Dijkstra (non-negative). Bellman-Ford if negative edges / K-stops limit.",
+      "use": "Min-heap of (dist, node)",
+      "gotcha": "Dijkstra breaks with negative weights — switch algorithm.",
+      "color": "tree"
+    },
+    {
+      "id": "trie",
+      "name": "Trie",
+      "group": "Trees & Graphs",
+      "complexity": "O(L)",
+      "signals": ["prefix", "autocomplete", "dictionary of words", "starts with"],
+      "do": "Character tree, end-of-word flag on terminal nodes.",
+      "use": "Nested maps / children array",
+      "gotcha": "Board search (Word Search II) = Trie + DFS together.",
+      "color": "tree"
+    },
+    {
+      "id": "backtracking",
+      "name": "Backtracking",
+      "group": "Optimization",
+      "complexity": "O(2ⁿ)/O(n!)",
+      "signals": ["all subsets / permutations / combinations", "generate every"],
+      "do": "Choose → recurse → undo. Prune branches that can't succeed.",
+      "use": "Recursion + path list",
+      "gotcha": "Append a copy of the path to results, not the live list.",
+      "color": "dp"
+    },
+    {
+      "id": "heap",
+      "name": "Heap / priority queue",
+      "group": "Optimization",
+      "complexity": "O(n log k)",
+      "signals": ["top K", "Kth largest", "stream", "median", "merge K"],
+      "do": "Keep a size-K heap; two heaps (max+min) for a running median.",
+      "use": "Min-heap / max-heap",
+      "gotcha": "For K largest, keep a min-heap of size K.",
+      "color": "dp"
+    },
+    {
+      "id": "greedy",
+      "name": "Greedy",
+      "group": "Optimization",
+      "complexity": "O(n log n)",
+      "signals": ["take best option now", "maximize / minimize + sortable"],
+      "do": "Sort, then commit to the locally best choice each step.",
+      "use": "Sort + running state",
+      "gotcha": "If you can't argue the local choice is safe, it's probably DP.",
+      "color": "dp"
+    },
+    {
+      "id": "1d-dp",
+      "name": "1-D DP",
+      "group": "Optimization",
+      "complexity": "O(n)",
+      "signals": ["count ways", "min / max", "can reach", "overlapping subproblems"],
+      "do": "Define dp[i] from earlier states; memoize, then go bottom-up.",
+      "use": "1-D array / two variables",
+      "gotcha": "Get the state definition + base case right before the recurrence.",
+      "color": "dp"
+    },
+    {
+      "id": "2d-dp",
+      "name": "2-D DP",
+      "group": "Optimization",
+      "complexity": "O(m·n)",
+      "signals": ["two strings", "grid paths", "state needs two indices"],
+      "do": "Fill a dp[i][j] table from its neighbors (often i-1, j-1).",
+      "use": "2-D table",
+      "gotcha": "Seed the base row/column; watch off-by-one on string lengths.",
+      "color": "dp"
+    },
+    {
+      "id": "math-geometry",
+      "name": "Math & geometry",
+      "group": "Misc",
+      "complexity": "O(n)–O(n²)",
+      "signals": ["matrix", "spiral", "rotate", "pow", "geometry", "simulate"],
+      "do": "Use math identities, layer-by-layer traversal, or coordinate hashing.",
+      "use": "Matrix indices, fast exponentiation, hash map of points",
+      "gotcha": "Watch overflow on pow/reverse integer; in-place matrix needs cycle tracking.",
+      "color": "misc"
+    },
+    {
+      "id": "bit-manipulation",
+      "name": "Bit manipulation",
+      "group": "Misc",
+      "complexity": "O(1)/O(b)",
+      "signals": ["without +/-", "single number", "count bits", "power of two"],
+      "do": "XOR, AND/OR masks, shifts.",
+      "use": "Bit ops",
+      "gotcha": "XOR cancels pairs; n & (n-1) clears the lowest set bit.",
+      "color": "misc"
+    }
+  ],
+  "triage": [
+    { "step": 1, "title": "Name the input.", "detail": "Array/string? Tree? Graph/grid? Intervals? A number? Sorted? Duplicates?" },
+    { "step": 2, "title": "Name the verb.", "detail": "Find / count ways / optimize (min·max) / generate all / order / check feasible — the verb names the family." },
+    { "step": 3, "title": "Read the constraints.", "detail": "n tells you the target Big-O (table), which rules patterns in or out." },
+    { "step": 4, "title": "State brute force out loud,", "detail": "then cut repeated work: a hash map, a sort, two pointers, or caching (DP)." },
+    { "step": 5, "title": "Confirm before coding.", "detail": "Restate approach + complexity to the interviewer, then write." }
+  ],
+  "complexityTable": [
+    { "n": "n ≤ 12", "aim": "permutations", "likely": "O(n!)" },
+    { "n": "n ≤ 20–25", "aim": "subset / bitmask", "likely": "O(2ⁿ)" },
+    { "n": "n ≤ 500", "aim": "DP, triple loop", "likely": "O(n³)" },
+    { "n": "n ≤ 5,000", "aim": "DP, nested loop", "likely": "O(n²)" },
+    { "n": "n ≤ 10⁵–10⁶", "aim": "sort / window / heap", "likely": "O(n log n)" },
+    { "n": "n > 10⁶", "aim": "single pass / math", "likely": "O(n), O(log n)" }
+  ],
+  "rescue": [
+    "Can I sort it?",
+    "Would a hash map kill the nested loop?",
+    "Two pointers after sorting?",
+    "What subresult could I cache?",
+    "Is it secretly a graph?",
+    "Draw it on 3 small inputs.",
+    "Solve brute force, then optimize.",
+    "What does the constraint size hint at?"
+  ]
+}

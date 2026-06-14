@@ -1,0 +1,3344 @@
+{
+  "problems": [
+    {
+      "id": 1,
+      "title": "Contains Duplicate",
+      "slug": "contains-duplicate",
+      "leetcodeId": 217,
+      "difficulty": "Easy",
+      "category": "Arrays & Hashing",
+      "patterns": [
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Hash set",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Sort + scan",
+          "time": "O(n log n)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Valid Anagram",
+      "slug": "valid-anagram",
+      "leetcodeId": 242,
+      "difficulty": "Easy",
+      "category": "Arrays & Hashing",
+      "patterns": [
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Frequency count",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Sort + compare",
+          "time": "O(n log n)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Two Sum",
+      "slug": "two-sum",
+      "leetcodeId": 1,
+      "difficulty": "Easy",
+      "category": "Arrays & Hashing",
+      "patterns": [
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Hash map complement",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Brute force pairs",
+          "time": "O(n\u00b2)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Group Anagrams",
+      "slug": "group-anagrams",
+      "leetcodeId": 49,
+      "difficulty": "Medium",
+      "category": "Arrays & Hashing",
+      "patterns": [
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Sorted string key",
+          "time": "O(n\u00b7k log k)",
+          "space": "O(n\u00b7k)",
+          "optimal": true
+        },
+        {
+          "name": "Frequency count key",
+          "time": "O(n\u00b7k)",
+          "space": "O(n\u00b7k)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Top K Frequent Elements",
+      "slug": "top-k-frequent-elements",
+      "leetcodeId": 347,
+      "difficulty": "Medium",
+      "category": "Arrays & Hashing",
+      "patterns": [
+        "hashing",
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Min-heap of size k",
+          "time": "O(n log k)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Bucket sort by frequency",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Product of Array Except Self",
+      "slug": "product-of-array-except-self",
+      "leetcodeId": 238,
+      "difficulty": "Medium",
+      "category": "Arrays & Hashing",
+      "patterns": [
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Prefix + suffix products",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Division with zero handling",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Encode and Decode Strings",
+      "slug": "encode-and-decode-strings",
+      "leetcodeId": 271,
+      "difficulty": "Medium",
+      "category": "Arrays & Hashing",
+      "patterns": [
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Length-delimited encoding",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Fixed-width length prefix",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Longest Consecutive Sequence",
+      "slug": "longest-consecutive-sequence",
+      "leetcodeId": 128,
+      "difficulty": "Medium",
+      "category": "Arrays & Hashing",
+      "patterns": [
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Hash set streak expansion",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Sort + scan",
+          "time": "O(n log n)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Valid Sudoku",
+      "slug": "valid-sudoku",
+      "leetcodeId": 36,
+      "difficulty": "Medium",
+      "category": "Arrays & Hashing",
+      "patterns": [
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Hash sets per row/col/box",
+          "time": "O(1)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Valid Palindrome",
+      "slug": "valid-palindrome",
+      "leetcodeId": 125,
+      "difficulty": "Easy",
+      "category": "Two Pointers",
+      "patterns": [
+        "two-pointers"
+      ],
+      "approaches": [
+        {
+          "name": "Two pointers inward",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Filter + reverse compare",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Two Sum II",
+      "slug": "two-sum-ii",
+      "leetcodeId": 167,
+      "difficulty": "Medium",
+      "category": "Two Pointers",
+      "patterns": [
+        "two-pointers"
+      ],
+      "approaches": [
+        {
+          "name": "Sorted two pointers",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Binary search per element",
+          "time": "O(n log n)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "3Sum",
+      "slug": "3sum",
+      "leetcodeId": 15,
+      "difficulty": "Medium",
+      "category": "Two Pointers",
+      "patterns": [
+        "two-pointers",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Sort + two pointers",
+          "time": "O(n\u00b2)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Hash set per anchor",
+          "time": "O(n\u00b2)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Container With Most Water",
+      "slug": "container-with-most-water",
+      "leetcodeId": 11,
+      "difficulty": "Medium",
+      "category": "Two Pointers",
+      "patterns": [
+        "two-pointers"
+      ],
+      "approaches": [
+        {
+          "name": "Greedy two pointers",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Brute force pairs",
+          "time": "O(n\u00b2)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Trapping Rain Water",
+      "slug": "trapping-rain-water",
+      "leetcodeId": 42,
+      "difficulty": "Hard",
+      "category": "Two Pointers",
+      "patterns": [
+        "two-pointers"
+      ],
+      "approaches": [
+        {
+          "name": "Two pointers with max heights",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Prefix max arrays",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        },
+        {
+          "name": "Monotonic stack",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Best Time to Buy and Sell Stock",
+      "slug": "best-time-to-buy-and-sell-stock",
+      "leetcodeId": 121,
+      "difficulty": "Easy",
+      "category": "Sliding Window",
+      "patterns": [
+        "sliding-window"
+      ],
+      "approaches": [
+        {
+          "name": "Track min price + max profit",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Longest Substring Without Repeating Characters",
+      "slug": "longest-substring-without-repeating-characters",
+      "leetcodeId": 3,
+      "difficulty": "Medium",
+      "category": "Sliding Window",
+      "patterns": [
+        "sliding-window",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Sliding window + last seen map",
+          "time": "O(n)",
+          "space": "O(min(n,\u03c3))",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Longest Repeating Character Replacement",
+      "slug": "longest-repeating-character-replacement",
+      "leetcodeId": 424,
+      "difficulty": "Medium",
+      "category": "Sliding Window",
+      "patterns": [
+        "sliding-window"
+      ],
+      "approaches": [
+        {
+          "name": "Max window with at most k replacements",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Max window with frequency map",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Permutation in String",
+      "slug": "permutation-in-string",
+      "leetcodeId": 567,
+      "difficulty": "Medium",
+      "category": "Sliding Window",
+      "patterns": [
+        "sliding-window",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Fixed window frequency match",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Minimum Window Substring",
+      "slug": "minimum-window-substring",
+      "leetcodeId": 76,
+      "difficulty": "Hard",
+      "category": "Sliding Window",
+      "patterns": [
+        "sliding-window",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Expand/shrink with need counts",
+          "time": "O(n)",
+          "space": "O(\u03c3)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Sliding Window Maximum",
+      "slug": "sliding-window-maximum",
+      "leetcodeId": 239,
+      "difficulty": "Hard",
+      "category": "Sliding Window",
+      "patterns": [
+        "sliding-window",
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Monotonic deque",
+          "time": "O(n)",
+          "space": "O(k)",
+          "optimal": true
+        },
+        {
+          "name": "Max-heap per window",
+          "time": "O(n log k)",
+          "space": "O(k)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Valid Parentheses",
+      "slug": "valid-parentheses",
+      "leetcodeId": 20,
+      "difficulty": "Easy",
+      "category": "Stack",
+      "patterns": [
+        "stack"
+      ],
+      "approaches": [
+        {
+          "name": "Stack matching",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Min Stack",
+      "slug": "min-stack",
+      "leetcodeId": 155,
+      "difficulty": "Medium",
+      "category": "Stack",
+      "patterns": [
+        "stack"
+      ],
+      "approaches": [
+        {
+          "name": "Two stacks",
+          "time": "O(1)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Single stack with pairs",
+          "time": "O(1)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Evaluate Reverse Polish Notation",
+      "slug": "evaluate-reverse-polish-notation",
+      "leetcodeId": 150,
+      "difficulty": "Medium",
+      "category": "Stack",
+      "patterns": [
+        "stack"
+      ],
+      "approaches": [
+        {
+          "name": "Stack evaluation",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Daily Temperatures",
+      "slug": "daily-temperatures",
+      "leetcodeId": 739,
+      "difficulty": "Medium",
+      "category": "Stack",
+      "patterns": [
+        "stack"
+      ],
+      "approaches": [
+        {
+          "name": "Monotonic decreasing stack",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Brute force next warmer",
+          "time": "O(n\u00b2)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Car Fleet",
+      "slug": "car-fleet",
+      "leetcodeId": 853,
+      "difficulty": "Medium",
+      "category": "Stack",
+      "patterns": [
+        "stack"
+      ],
+      "approaches": [
+        {
+          "name": "Sort by position + stack merge",
+          "time": "O(n log n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Largest Rectangle in Histogram",
+      "slug": "largest-rectangle-in-histogram",
+      "leetcodeId": 84,
+      "difficulty": "Hard",
+      "category": "Stack",
+      "patterns": [
+        "stack"
+      ],
+      "approaches": [
+        {
+          "name": "Monotonic increasing stack",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Divide and conquer",
+          "time": "O(n log n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Binary Search",
+      "slug": "binary-search",
+      "leetcodeId": 704,
+      "difficulty": "Easy",
+      "category": "Binary Search",
+      "patterns": [
+        "binary-search"
+      ],
+      "approaches": [
+        {
+          "name": "Classic lo/hi binary search",
+          "time": "O(log n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Search a 2D Matrix",
+      "slug": "search-a-2d-matrix",
+      "leetcodeId": 74,
+      "difficulty": "Medium",
+      "category": "Binary Search",
+      "patterns": [
+        "binary-search"
+      ],
+      "approaches": [
+        {
+          "name": "Treat as 1D sorted array",
+          "time": "O(log(m\u00b7n))",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Two binary searches",
+          "time": "O(log m + log n)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Koko Eating Bananas",
+      "slug": "koko-eating-bananas",
+      "leetcodeId": 875,
+      "difficulty": "Medium",
+      "category": "Binary Search",
+      "patterns": [
+        "binary-search"
+      ],
+      "approaches": [
+        {
+          "name": "Binary search on eating speed",
+          "time": "O(n log m)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Find Minimum in Rotated Sorted Array",
+      "slug": "find-minimum-in-rotated-sorted-array",
+      "leetcodeId": 153,
+      "difficulty": "Medium",
+      "category": "Binary Search",
+      "patterns": [
+        "binary-search"
+      ],
+      "approaches": [
+        {
+          "name": "Compare mid with right",
+          "time": "O(log n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Search in Rotated Sorted Array",
+      "slug": "search-in-rotated-sorted-array",
+      "leetcodeId": 33,
+      "difficulty": "Medium",
+      "category": "Binary Search",
+      "patterns": [
+        "binary-search"
+      ],
+      "approaches": [
+        {
+          "name": "Identify sorted half",
+          "time": "O(log n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Time Based Key-Value Store",
+      "slug": "time-based-key-value-store",
+      "leetcodeId": 981,
+      "difficulty": "Medium",
+      "category": "Binary Search",
+      "patterns": [
+        "binary-search"
+      ],
+      "approaches": [
+        {
+          "name": "Hash map + binary search timestamps",
+          "time": "O(log n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Median of Two Sorted Arrays",
+      "slug": "median-of-two-sorted-arrays",
+      "leetcodeId": 4,
+      "difficulty": "Hard",
+      "category": "Binary Search",
+      "patterns": [
+        "binary-search"
+      ],
+      "approaches": [
+        {
+          "name": "Binary search partition",
+          "time": "O(log(min(m,n)))",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Merge two arrays",
+          "time": "O(m+n)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Reverse Linked List",
+      "slug": "reverse-linked-list",
+      "leetcodeId": 206,
+      "difficulty": "Easy",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list"
+      ],
+      "approaches": [
+        {
+          "name": "Iterative reversal",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Recursive reversal",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Merge Two Sorted Lists",
+      "slug": "merge-two-sorted-lists",
+      "leetcodeId": 21,
+      "difficulty": "Easy",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list"
+      ],
+      "approaches": [
+        {
+          "name": "Dummy head merge",
+          "time": "O(n+m)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Recursive merge",
+          "time": "O(n+m)",
+          "space": "O(n+m)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Reorder List",
+      "slug": "reorder-list",
+      "leetcodeId": 143,
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list"
+      ],
+      "approaches": [
+        {
+          "name": "Find mid + reverse + merge",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Remove Nth Node From End of List",
+      "slug": "remove-nth-node-from-end-of-list",
+      "leetcodeId": 19,
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list",
+        "two-pointers"
+      ],
+      "approaches": [
+        {
+          "name": "Fast/slow two pointers",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Two pass length count",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Copy List with Random Pointer",
+      "slug": "copy-list-with-random-pointer",
+      "leetcodeId": 138,
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Hash map old to new",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Interweave + split",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "title": "Add Two Numbers",
+      "slug": "add-two-numbers",
+      "leetcodeId": 2,
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list"
+      ],
+      "approaches": [
+        {
+          "name": "Simulate addition with carry",
+          "time": "O(max(n,m))",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "title": "Linked List Cycle",
+      "slug": "linked-list-cycle",
+      "leetcodeId": 141,
+      "difficulty": "Easy",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list",
+        "two-pointers"
+      ],
+      "approaches": [
+        {
+          "name": "Floyd cycle detection",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Hash set of visited",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "title": "Find the Duplicate Number",
+      "slug": "find-the-duplicate-number",
+      "leetcodeId": 287,
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list",
+        "two-pointers"
+      ],
+      "approaches": [
+        {
+          "name": "Floyd cycle on index graph",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Binary search on value range",
+          "time": "O(n log n)",
+          "space": "O(1)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "title": "LRU Cache",
+      "slug": "lru-cache",
+      "leetcodeId": 146,
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Hash map + doubly linked list",
+          "time": "O(1)",
+          "space": "O(capacity)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "title": "Merge k Sorted Lists",
+      "slug": "merge-k-sorted-lists",
+      "leetcodeId": 23,
+      "difficulty": "Hard",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list",
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Min-heap of k heads",
+          "time": "O(n log k)",
+          "space": "O(k)",
+          "optimal": true
+        },
+        {
+          "name": "Divide and conquer merge",
+          "time": "O(n log k)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "title": "Reverse Nodes in k-Group",
+      "slug": "reverse-nodes-in-k-group",
+      "leetcodeId": 25,
+      "difficulty": "Hard",
+      "category": "Linked List",
+      "patterns": [
+        "linked-list"
+      ],
+      "approaches": [
+        {
+          "name": "Iterative k-group reversal",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Recursive k-group reversal",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "title": "Invert Binary Tree",
+      "slug": "invert-binary-tree",
+      "leetcodeId": 226,
+      "difficulty": "Easy",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Recursive DFS swap",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "BFS level swap",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Maximum Depth of Binary Tree",
+      "slug": "maximum-depth-of-binary-tree",
+      "leetcodeId": 104,
+      "difficulty": "Easy",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Recursive max depth",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "BFS level count",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "title": "Diameter of Binary Tree",
+      "slug": "diameter-of-binary-tree",
+      "leetcodeId": 543,
+      "difficulty": "Easy",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "DFS height with global max",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "title": "Balanced Binary Tree",
+      "slug": "balanced-binary-tree",
+      "leetcodeId": 110,
+      "difficulty": "Easy",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Post-order height check",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "title": "Same Tree",
+      "slug": "same-tree",
+      "leetcodeId": 100,
+      "difficulty": "Easy",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Recursive compare",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "BFS compare",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "title": "Subtree of Another Tree",
+      "slug": "subtree-of-another-tree",
+      "leetcodeId": 572,
+      "difficulty": "Easy",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "DFS match at each node",
+          "time": "O(n\u00b7m)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "title": "Lowest Common Ancestor of a BST",
+      "slug": "lowest-common-ancestor-of-a-bst",
+      "leetcodeId": 235,
+      "difficulty": "Medium",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "BST property walk",
+          "time": "O(h)",
+          "space": "O(h)",
+          "optimal": true
+        },
+        {
+          "name": "Recursive DFS",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "title": "Binary Tree Level Order Traversal",
+      "slug": "binary-tree-level-order-traversal",
+      "leetcodeId": 102,
+      "difficulty": "Medium",
+      "category": "Trees",
+      "patterns": [
+        "bfs"
+      ],
+      "approaches": [
+        {
+          "name": "BFS queue by level",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "title": "Binary Tree Right Side View",
+      "slug": "binary-tree-right-side-view",
+      "leetcodeId": 199,
+      "difficulty": "Medium",
+      "category": "Trees",
+      "patterns": [
+        "bfs",
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "BFS last node per level",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "DFS right-first preorder",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "title": "Count Good Nodes in Binary Tree",
+      "slug": "count-good-nodes-in-binary-tree",
+      "leetcodeId": 1448,
+      "difficulty": "Medium",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "DFS track path max",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "title": "Validate Binary Search Tree",
+      "slug": "validate-binary-search-tree",
+      "leetcodeId": 98,
+      "difficulty": "Medium",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "In-order or min/max bounds",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "title": "Kth Smallest Element in a BST",
+      "slug": "kth-smallest-element-in-a-bst",
+      "leetcodeId": 230,
+      "difficulty": "Medium",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "In-order traversal",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Iterative stack in-order",
+          "time": "O(h+k)",
+          "space": "O(h)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "title": "Construct Binary Tree from Preorder and Inorder",
+      "slug": "construct-binary-tree-from-preorder-and-inorder",
+      "leetcodeId": 105,
+      "difficulty": "Medium",
+      "category": "Trees",
+      "patterns": [
+        "dfs",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Recursive with hash map index",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "title": "Binary Tree Maximum Path Sum",
+      "slug": "binary-tree-maximum-path-sum",
+      "leetcodeId": 124,
+      "difficulty": "Hard",
+      "category": "Trees",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Post-order max gain",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "title": "Serialize and Deserialize Binary Tree",
+      "slug": "serialize-and-deserialize-binary-tree",
+      "leetcodeId": 297,
+      "difficulty": "Hard",
+      "category": "Trees",
+      "patterns": [
+        "dfs",
+        "bfs"
+      ],
+      "approaches": [
+        {
+          "name": "Preorder with null markers",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "BFS level serialization",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "title": "Kth Largest Element in a Stream",
+      "slug": "kth-largest-element-in-a-stream",
+      "leetcodeId": 703,
+      "difficulty": "Easy",
+      "category": "Heap / Priority Queue",
+      "patterns": [
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Min-heap of size k",
+          "time": "O(log k) per add",
+          "space": "O(k)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "title": "Last Stone Weight",
+      "slug": "last-stone-weight",
+      "leetcodeId": 1046,
+      "difficulty": "Easy",
+      "category": "Heap / Priority Queue",
+      "patterns": [
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Max-heap smash simulation",
+          "time": "O(n log n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "title": "K Closest Points to Origin",
+      "slug": "k-closest-points-to-origin",
+      "leetcodeId": 973,
+      "difficulty": "Medium",
+      "category": "Heap / Priority Queue",
+      "patterns": [
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Max-heap of size k",
+          "time": "O(n log k)",
+          "space": "O(k)",
+          "optimal": true
+        },
+        {
+          "name": "Quickselect",
+          "time": "O(n) avg",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "title": "Kth Largest Element in an Array",
+      "slug": "kth-largest-element-in-an-array",
+      "leetcodeId": 215,
+      "difficulty": "Medium",
+      "category": "Heap / Priority Queue",
+      "patterns": [
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Min-heap of size k",
+          "time": "O(n log k)",
+          "space": "O(k)",
+          "optimal": true
+        },
+        {
+          "name": "Quickselect",
+          "time": "O(n) avg",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "title": "Task Scheduler",
+      "slug": "task-scheduler",
+      "leetcodeId": 621,
+      "difficulty": "Medium",
+      "category": "Heap / Priority Queue",
+      "patterns": [
+        "heap",
+        "greedy"
+      ],
+      "approaches": [
+        {
+          "name": "Max-heap + idle slots formula",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Max-heap simulation",
+          "time": "O(n log \u03c3)",
+          "space": "O(\u03c3)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "title": "Design Twitter",
+      "slug": "design-twitter",
+      "leetcodeId": 355,
+      "difficulty": "Medium",
+      "category": "Heap / Priority Queue",
+      "patterns": [
+        "heap",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Hash map feeds + heap merge",
+          "time": "O(k log k)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "title": "Find Median from Data Stream",
+      "slug": "find-median-from-data-stream",
+      "leetcodeId": 295,
+      "difficulty": "Hard",
+      "category": "Heap / Priority Queue",
+      "patterns": [
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Two heaps (max + min)",
+          "time": "O(log n) add",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "title": "Subsets",
+      "slug": "subsets",
+      "leetcodeId": 78,
+      "difficulty": "Medium",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking"
+      ],
+      "approaches": [
+        {
+          "name": "Include/exclude recursion",
+          "time": "O(n\u00b72\u207f)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "title": "Combination Sum",
+      "slug": "combination-sum",
+      "leetcodeId": 39,
+      "difficulty": "Medium",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking"
+      ],
+      "approaches": [
+        {
+          "name": "Backtrack with reuse",
+          "time": "O(2^target)",
+          "space": "O(target)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "title": "Permutations",
+      "slug": "permutations",
+      "leetcodeId": 46,
+      "difficulty": "Medium",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking"
+      ],
+      "approaches": [
+        {
+          "name": "Swap-based backtracking",
+          "time": "O(n\u00b7n!)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Used array backtracking",
+          "time": "O(n\u00b7n!)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "title": "Subsets II",
+      "slug": "subsets-ii",
+      "leetcodeId": 90,
+      "difficulty": "Medium",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking"
+      ],
+      "approaches": [
+        {
+          "name": "Sort + skip duplicates",
+          "time": "O(n\u00b72\u207f)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "title": "Combination Sum II",
+      "slug": "combination-sum-ii",
+      "leetcodeId": 40,
+      "difficulty": "Medium",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking"
+      ],
+      "approaches": [
+        {
+          "name": "Sort + no reuse backtrack",
+          "time": "O(2\u207f)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "title": "Word Search",
+      "slug": "word-search",
+      "leetcodeId": 79,
+      "difficulty": "Medium",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking",
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "DFS backtrack on board",
+          "time": "O(m\u00b7n\u00b74^L)",
+          "space": "O(L)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "title": "Palindrome Partitioning",
+      "slug": "palindrome-partitioning",
+      "leetcodeId": 131,
+      "difficulty": "Medium",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking"
+      ],
+      "approaches": [
+        {
+          "name": "Backtrack with palindrome check",
+          "time": "O(n\u00b72\u207f)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "title": "Letter Combinations of a Phone Number",
+      "slug": "letter-combinations-of-a-phone-number",
+      "leetcodeId": 17,
+      "difficulty": "Medium",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking"
+      ],
+      "approaches": [
+        {
+          "name": "Digit-to-letters backtrack",
+          "time": "O(4\u207f)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "title": "N-Queens",
+      "slug": "n-queens",
+      "leetcodeId": 51,
+      "difficulty": "Hard",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking"
+      ],
+      "approaches": [
+        {
+          "name": "Column/diag set backtrack",
+          "time": "O(n!)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "title": "Generate Parentheses",
+      "slug": "generate-parentheses",
+      "leetcodeId": 22,
+      "difficulty": "Medium",
+      "category": "Backtracking",
+      "patterns": [
+        "backtracking"
+      ],
+      "approaches": [
+        {
+          "name": "Open/close count backtrack",
+          "time": "O(4\u207f/\u221an)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "title": "Implement Trie",
+      "slug": "implement-trie",
+      "leetcodeId": 208,
+      "difficulty": "Medium",
+      "category": "Tries",
+      "patterns": [
+        "trie"
+      ],
+      "approaches": [
+        {
+          "name": "Array/map children trie",
+          "time": "O(L)",
+          "space": "O(n\u00b7L)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "title": "Design Add and Search Words Data Structure",
+      "slug": "design-add-and-search-words-data-structure",
+      "leetcodeId": 211,
+      "difficulty": "Medium",
+      "category": "Tries",
+      "patterns": [
+        "trie",
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Trie + DFS for wildcards",
+          "time": "O(L) search",
+          "space": "O(n\u00b7L)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "title": "Word Search II",
+      "slug": "word-search-ii",
+      "leetcodeId": 212,
+      "difficulty": "Hard",
+      "category": "Tries",
+      "patterns": [
+        "trie",
+        "backtracking",
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Trie + board DFS prune",
+          "time": "O(m\u00b7n\u00b74^L)",
+          "space": "O(n\u00b7L)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "title": "Number of Islands",
+      "slug": "number-of-islands",
+      "leetcodeId": 200,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "DFS flood fill",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        },
+        {
+          "name": "BFS flood fill",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "title": "Clone Graph",
+      "slug": "clone-graph",
+      "leetcodeId": 133,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "dfs",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "DFS with hash map clone",
+          "time": "O(V+E)",
+          "space": "O(V)",
+          "optimal": true
+        },
+        {
+          "name": "BFS clone",
+          "time": "O(V+E)",
+          "space": "O(V)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "title": "Max Area of Island",
+      "slug": "max-area-of-island",
+      "leetcodeId": 695,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "DFS area count",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "title": "Pacific Atlantic Water Flow",
+      "slug": "pacific-atlantic-water-flow",
+      "leetcodeId": 417,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "DFS from both oceans",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "title": "Surrounded Regions",
+      "slug": "surrounded-regions",
+      "leetcodeId": 130,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "DFS from border O's",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        },
+        {
+          "name": "BFS from borders",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "title": "Rotting Oranges",
+      "slug": "rotting-oranges",
+      "leetcodeId": 994,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "bfs"
+      ],
+      "approaches": [
+        {
+          "name": "Multi-source BFS",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "title": "Walls and Gates",
+      "slug": "walls-and-gates",
+      "leetcodeId": 286,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "bfs"
+      ],
+      "approaches": [
+        {
+          "name": "Multi-source BFS from gates",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "title": "Course Schedule",
+      "slug": "course-schedule",
+      "leetcodeId": 207,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "topological-sort",
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Kahn's topological sort",
+          "time": "O(V+E)",
+          "space": "O(V+E)",
+          "optimal": true
+        },
+        {
+          "name": "DFS cycle detection",
+          "time": "O(V+E)",
+          "space": "O(V+E)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "title": "Course Schedule II",
+      "slug": "course-schedule-ii",
+      "leetcodeId": 210,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "topological-sort",
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Kahn's BFS order",
+          "time": "O(V+E)",
+          "space": "O(V+E)",
+          "optimal": true
+        },
+        {
+          "name": "DFS post-order",
+          "time": "O(V+E)",
+          "space": "O(V+E)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "title": "Redundant Connection",
+      "slug": "redundant-connection",
+      "leetcodeId": 684,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "union-find"
+      ],
+      "approaches": [
+        {
+          "name": "Union-Find last redundant edge",
+          "time": "O(n\u00b7\u03b1(n))",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "DFS cycle detection",
+          "time": "O(n\u00b2)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "title": "Number of Connected Components",
+      "slug": "number-of-connected-components",
+      "leetcodeId": 323,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "union-find",
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Union-Find count",
+          "time": "O(n\u00b7\u03b1(n))",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "DFS count components",
+          "time": "O(V+E)",
+          "space": "O(V)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "title": "Graph Valid Tree",
+      "slug": "graph-valid-tree",
+      "leetcodeId": 261,
+      "difficulty": "Medium",
+      "category": "Graphs",
+      "patterns": [
+        "union-find",
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Union-Find no cycle + connected",
+          "time": "O(n\u00b7\u03b1(n))",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "BFS/DFS connectivity",
+          "time": "O(V+E)",
+          "space": "O(V)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "title": "Word Ladder",
+      "slug": "word-ladder",
+      "leetcodeId": 127,
+      "difficulty": "Hard",
+      "category": "Graphs",
+      "patterns": [
+        "bfs"
+      ],
+      "approaches": [
+        {
+          "name": "BFS shortest transformation",
+          "time": "O(n\u00b2\u00b7L)",
+          "space": "O(n\u00b2)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "title": "Reconstruct Itinerary",
+      "slug": "reconstruct-itinerary",
+      "leetcodeId": 332,
+      "difficulty": "Hard",
+      "category": "Advanced Graphs",
+      "patterns": [
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "Hierholzer Eulerian path",
+          "time": "O(E log E)",
+          "space": "O(E)",
+          "optimal": true
+        },
+        {
+          "name": "DFS post-order",
+          "time": "O(E log E)",
+          "space": "O(E)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "title": "Min Cost to Connect All Points",
+      "slug": "min-cost-to-connect-all-points",
+      "leetcodeId": 1584,
+      "difficulty": "Medium",
+      "category": "Advanced Graphs",
+      "patterns": [
+        "union-find",
+        "greedy"
+      ],
+      "approaches": [
+        {
+          "name": "Prim's MST",
+          "time": "O(n\u00b2 log n)",
+          "space": "O(n\u00b2)",
+          "optimal": true
+        },
+        {
+          "name": "Kruskal with Union-Find",
+          "time": "O(n\u00b2 log n)",
+          "space": "O(n\u00b2)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "title": "Network Delay Time",
+      "slug": "network-delay-time",
+      "leetcodeId": 743,
+      "difficulty": "Medium",
+      "category": "Advanced Graphs",
+      "patterns": [
+        "weighted-shortest-path"
+      ],
+      "approaches": [
+        {
+          "name": "Dijkstra from source",
+          "time": "O(E log V)",
+          "space": "O(V+E)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "title": "Swim in Rising Water",
+      "slug": "swim-in-rising-water",
+      "leetcodeId": 778,
+      "difficulty": "Hard",
+      "category": "Advanced Graphs",
+      "patterns": [
+        "weighted-shortest-path",
+        "union-find"
+      ],
+      "approaches": [
+        {
+          "name": "Binary search on max height",
+          "time": "O(n\u00b2 log n)",
+          "space": "O(n\u00b2)",
+          "optimal": true
+        },
+        {
+          "name": "Dijkstra on grid",
+          "time": "O(n\u00b2 log n)",
+          "space": "O(n\u00b2)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "title": "Alien Dictionary",
+      "slug": "alien-dictionary",
+      "leetcodeId": 269,
+      "difficulty": "Hard",
+      "category": "Advanced Graphs",
+      "patterns": [
+        "topological-sort"
+      ],
+      "approaches": [
+        {
+          "name": "Build graph + topological sort",
+          "time": "O(n+L)",
+          "space": "O(n+L)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "title": "Cheapest Flights Within K Stops",
+      "slug": "cheapest-flights-within-k-stops",
+      "leetcodeId": 787,
+      "difficulty": "Medium",
+      "category": "Advanced Graphs",
+      "patterns": [
+        "weighted-shortest-path"
+      ],
+      "approaches": [
+        {
+          "name": "Bellman-Ford K iterations",
+          "time": "O(K\u00b7E)",
+          "space": "O(V)",
+          "optimal": true
+        },
+        {
+          "name": "BFS with (node, stops, cost)",
+          "time": "O(K\u00b7E)",
+          "space": "O(V)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "title": "Climbing Stairs",
+      "slug": "climbing-stairs",
+      "leetcodeId": 70,
+      "difficulty": "Easy",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Fibonacci DP",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Memoized recursion",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "title": "Min Cost Climbing Stairs",
+      "slug": "min-cost-climbing-stairs",
+      "leetcodeId": 746,
+      "difficulty": "Easy",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Bottom-up min of prev two",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "title": "House Robber",
+      "slug": "house-robber",
+      "leetcodeId": 198,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Rob/skip DP",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "title": "House Robber II",
+      "slug": "house-robber-ii",
+      "leetcodeId": 213,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Two linear passes skip ends",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "title": "Longest Palindromic Substring",
+      "slug": "longest-palindromic-substring",
+      "leetcodeId": 5,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp",
+        "two-pointers"
+      ],
+      "approaches": [
+        {
+          "name": "Expand around center",
+          "time": "O(n\u00b2)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "2D DP table",
+          "time": "O(n\u00b2)",
+          "space": "O(n\u00b2)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "title": "Palindromic Substrings",
+      "slug": "palindromic-substrings",
+      "leetcodeId": 647,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp",
+        "two-pointers"
+      ],
+      "approaches": [
+        {
+          "name": "Expand around center",
+          "time": "O(n\u00b2)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "title": "Decode Ways",
+      "slug": "decode-ways",
+      "leetcodeId": 91,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Linear DP ways[i]",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "title": "Coin Change",
+      "slug": "coin-change",
+      "leetcodeId": 322,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Unbounded knapsack DP",
+          "time": "O(n\u00b7amount)",
+          "space": "O(amount)",
+          "optimal": true
+        },
+        {
+          "name": "BFS level order",
+          "time": "O(n\u00b7amount)",
+          "space": "O(amount)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "title": "Maximum Product Subarray",
+      "slug": "maximum-product-subarray",
+      "leetcodeId": 152,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Track max and min product",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "title": "Word Break",
+      "slug": "word-break",
+      "leetcodeId": 139,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "DP reachable[i]",
+          "time": "O(n\u00b2\u00b7L)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "BFS segment check",
+          "time": "O(n\u00b2\u00b7L)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "title": "Longest Increasing Subsequence",
+      "slug": "longest-increasing-subsequence",
+      "leetcodeId": 300,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp",
+        "binary-search"
+      ],
+      "approaches": [
+        {
+          "name": "Patience sorting / tails",
+          "time": "O(n log n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "O(n\u00b2) DP",
+          "time": "O(n\u00b2)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "title": "Partition Equal Subset Sum",
+      "slug": "partition-equal-subset-sum",
+      "leetcodeId": 416,
+      "difficulty": "Medium",
+      "category": "1-D Dynamic Programming",
+      "patterns": [
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "0/1 knapsack DP",
+          "time": "O(n\u00b7sum)",
+          "space": "O(sum)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "title": "Unique Paths",
+      "slug": "unique-paths",
+      "leetcodeId": 62,
+      "difficulty": "Medium",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Grid DP bottom-up",
+          "time": "O(m\u00b7n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Combinatorics C(m+n-2,m-1)",
+          "time": "O(min(m,n))",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "title": "Longest Common Subsequence",
+      "slug": "longest-common-subsequence",
+      "leetcodeId": 1143,
+      "difficulty": "Medium",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "2D DP table",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        },
+        {
+          "name": "Space-optimized 1D",
+          "time": "O(m\u00b7n)",
+          "space": "O(min(m,n))",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "title": "Best Time to Buy and Sell Stock with Cooldown",
+      "slug": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "leetcodeId": 309,
+      "difficulty": "Medium",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "1d-dp",
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "State machine DP (hold/sold/rest)",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "title": "Coin Change 2",
+      "slug": "coin-change-2",
+      "leetcodeId": 518,
+      "difficulty": "Medium",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "1d-dp",
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Unbounded knapsack ways",
+          "time": "O(n\u00b7amount)",
+          "space": "O(amount)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "title": "Target Sum",
+      "slug": "target-sum",
+      "leetcodeId": 494,
+      "difficulty": "Medium",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "1d-dp",
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Subset sum DP",
+          "time": "O(n\u00b7sum)",
+          "space": "O(sum)",
+          "optimal": true
+        },
+        {
+          "name": "Memoized +/- recursion",
+          "time": "O(n\u00b7sum)",
+          "space": "O(n\u00b7sum)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "title": "Interleaving String",
+      "slug": "interleaving-string",
+      "leetcodeId": 97,
+      "difficulty": "Hard",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "2D DP match s1/s2",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        },
+        {
+          "name": "Space-optimized 1D",
+          "time": "O(m\u00b7n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "title": "Longest Increasing Path in a Matrix",
+      "slug": "longest-increasing-path-in-a-matrix",
+      "leetcodeId": 329,
+      "difficulty": "Hard",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "2d-dp",
+        "dfs"
+      ],
+      "approaches": [
+        {
+          "name": "DFS + memoization",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "title": "Distinct Subsequences",
+      "slug": "distinct-subsequences",
+      "leetcodeId": 115,
+      "difficulty": "Hard",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "2D DP count matches",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        },
+        {
+          "name": "Space-optimized 1D",
+          "time": "O(m\u00b7n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "title": "Edit Distance",
+      "slug": "edit-distance",
+      "leetcodeId": 72,
+      "difficulty": "Medium",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Levenshtein DP",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        },
+        {
+          "name": "Space-optimized 1D",
+          "time": "O(m\u00b7n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "title": "Burst Balloons",
+      "slug": "burst-balloons",
+      "leetcodeId": 312,
+      "difficulty": "Hard",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Interval DP",
+          "time": "O(n\u00b3)",
+          "space": "O(n\u00b2)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "title": "Regular Expression Matching",
+      "slug": "regular-expression-matching",
+      "leetcodeId": 10,
+      "difficulty": "Hard",
+      "category": "2-D Dynamic Programming",
+      "patterns": [
+        "2d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "2D DP with .* cases",
+          "time": "O(m\u00b7n)",
+          "space": "O(m\u00b7n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "title": "Maximum Subarray",
+      "slug": "maximum-subarray",
+      "leetcodeId": 53,
+      "difficulty": "Medium",
+      "category": "Greedy",
+      "patterns": [
+        "greedy",
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "Kadane's algorithm",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Divide and conquer",
+          "time": "O(n log n)",
+          "space": "O(log n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "title": "Jump Game",
+      "slug": "jump-game",
+      "leetcodeId": 55,
+      "difficulty": "Medium",
+      "category": "Greedy",
+      "patterns": [
+        "greedy"
+      ],
+      "approaches": [
+        {
+          "name": "Track farthest reachable",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Backward greedy",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "title": "Jump Game II",
+      "slug": "jump-game-ii",
+      "leetcodeId": 45,
+      "difficulty": "Medium",
+      "category": "Greedy",
+      "patterns": [
+        "greedy"
+      ],
+      "approaches": [
+        {
+          "name": "Greedy BFS-like jumps",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "DP O(n\u00b2)",
+          "time": "O(n\u00b2)",
+          "space": "O(n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "title": "Gas Station",
+      "slug": "gas-station",
+      "leetcodeId": 134,
+      "difficulty": "Medium",
+      "category": "Greedy",
+      "patterns": [
+        "greedy"
+      ],
+      "approaches": [
+        {
+          "name": "Single pass total + start",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "title": "Hand of Straights",
+      "slug": "hand-of-straights",
+      "leetcodeId": 846,
+      "difficulty": "Medium",
+      "category": "Greedy",
+      "patterns": [
+        "greedy",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Sort + hash map groups",
+          "time": "O(n log n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "title": "Merge Triplets to Form Target Triplet",
+      "slug": "merge-triplets-to-form-target-triplet",
+      "leetcodeId": 1899,
+      "difficulty": "Medium",
+      "category": "Greedy",
+      "patterns": [
+        "greedy"
+      ],
+      "approaches": [
+        {
+          "name": "Track max of needed dims",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "title": "Partition Labels",
+      "slug": "partition-labels",
+      "leetcodeId": 763,
+      "difficulty": "Medium",
+      "category": "Greedy",
+      "patterns": [
+        "greedy",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Last occurrence greedy partition",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "title": "Valid Parenthesis String",
+      "slug": "valid-parenthesis-string",
+      "leetcodeId": 678,
+      "difficulty": "Medium",
+      "category": "Greedy",
+      "patterns": [
+        "greedy",
+        "stack"
+      ],
+      "approaches": [
+        {
+          "name": "Two-pass open/close balance",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Greedy range lo/hi",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "title": "Insert Interval",
+      "slug": "insert-interval",
+      "leetcodeId": 57,
+      "difficulty": "Medium",
+      "category": "Intervals",
+      "patterns": [
+        "intervals"
+      ],
+      "approaches": [
+        {
+          "name": "Merge in one pass",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "title": "Merge Intervals",
+      "slug": "merge-intervals",
+      "leetcodeId": 56,
+      "difficulty": "Medium",
+      "category": "Intervals",
+      "patterns": [
+        "intervals"
+      ],
+      "approaches": [
+        {
+          "name": "Sort by start + merge",
+          "time": "O(n log n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "title": "Non-overlapping Intervals",
+      "slug": "non-overlapping-intervals",
+      "leetcodeId": 435,
+      "difficulty": "Medium",
+      "category": "Intervals",
+      "patterns": [
+        "intervals",
+        "greedy"
+      ],
+      "approaches": [
+        {
+          "name": "Sort by end + greedy keep",
+          "time": "O(n log n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "title": "Meeting Rooms",
+      "slug": "meeting-rooms",
+      "leetcodeId": 252,
+      "difficulty": "Easy",
+      "category": "Intervals",
+      "patterns": [
+        "intervals"
+      ],
+      "approaches": [
+        {
+          "name": "Sort + check overlap",
+          "time": "O(n log n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "title": "Meeting Rooms II",
+      "slug": "meeting-rooms-ii",
+      "leetcodeId": 253,
+      "difficulty": "Medium",
+      "category": "Intervals",
+      "patterns": [
+        "intervals",
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Min-heap of end times",
+          "time": "O(n log n)",
+          "space": "O(n)",
+          "optimal": true
+        },
+        {
+          "name": "Sweep line",
+          "time": "O(n log n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "title": "Minimum Interval to Include Each Query",
+      "slug": "minimum-interval-to-include-each-query",
+      "leetcodeId": 1851,
+      "difficulty": "Hard",
+      "category": "Intervals",
+      "patterns": [
+        "intervals",
+        "heap"
+      ],
+      "approaches": [
+        {
+          "name": "Sort queries + sweep with heap",
+          "time": "O(n log n + q log q)",
+          "space": "O(n+q)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "title": "Rotate Image",
+      "slug": "rotate-image",
+      "leetcodeId": 48,
+      "difficulty": "Medium",
+      "category": "Math & Geometry",
+      "patterns": [
+        "math-geometry"
+      ],
+      "approaches": [
+        {
+          "name": "Layer-by-layer rotate",
+          "time": "O(n\u00b2)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Transpose + reverse rows",
+          "time": "O(n\u00b2)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "title": "Spiral Matrix",
+      "slug": "spiral-matrix",
+      "leetcodeId": 54,
+      "difficulty": "Medium",
+      "category": "Math & Geometry",
+      "patterns": [
+        "math-geometry"
+      ],
+      "approaches": [
+        {
+          "name": "Boundary simulation",
+          "time": "O(m\u00b7n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "title": "Set Matrix Zeroes",
+      "slug": "set-matrix-zeroes",
+      "leetcodeId": 73,
+      "difficulty": "Medium",
+      "category": "Math & Geometry",
+      "patterns": [
+        "math-geometry"
+      ],
+      "approaches": [
+        {
+          "name": "First row/col as markers",
+          "time": "O(m\u00b7n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "title": "Happy Number",
+      "slug": "happy-number",
+      "leetcodeId": 202,
+      "difficulty": "Easy",
+      "category": "Math & Geometry",
+      "patterns": [
+        "math-geometry",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Floyd cycle on digit squares",
+          "time": "O(log n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Hash set of seen",
+          "time": "O(log n)",
+          "space": "O(log n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "title": "Plus One",
+      "slug": "plus-one",
+      "leetcodeId": 66,
+      "difficulty": "Easy",
+      "category": "Math & Geometry",
+      "patterns": [
+        "math-geometry"
+      ],
+      "approaches": [
+        {
+          "name": "Simulate carry from end",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "title": "Pow(x, n)",
+      "slug": "powx-n",
+      "leetcodeId": 50,
+      "difficulty": "Medium",
+      "category": "Math & Geometry",
+      "patterns": [
+        "math-geometry",
+        "binary-search"
+      ],
+      "approaches": [
+        {
+          "name": "Fast exponentiation",
+          "time": "O(log n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Recursive halving",
+          "time": "O(log n)",
+          "space": "O(log n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "title": "Multiply Strings",
+      "slug": "multiply-strings",
+      "leetcodeId": 43,
+      "difficulty": "Medium",
+      "category": "Math & Geometry",
+      "patterns": [
+        "math-geometry"
+      ],
+      "approaches": [
+        {
+          "name": "Grade-school multiplication",
+          "time": "O(m\u00b7n)",
+          "space": "O(m+n)",
+          "optimal": true
+        },
+        {
+          "name": "Karatsuba (overkill)",
+          "time": "O(m\u00b7n)",
+          "space": "O(m+n)",
+          "optimal": false
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "title": "Detect Squares",
+      "slug": "detect-squares",
+      "leetcodeId": 2013,
+      "difficulty": "Medium",
+      "category": "Math & Geometry",
+      "patterns": [
+        "math-geometry",
+        "hashing"
+      ],
+      "approaches": [
+        {
+          "name": "Hash map point counts",
+          "time": "O(1) add / O(n) count",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 144,
+      "title": "Single Number",
+      "slug": "single-number",
+      "leetcodeId": 136,
+      "difficulty": "Easy",
+      "category": "Bit Manipulation",
+      "patterns": [
+        "bit-manipulation"
+      ],
+      "approaches": [
+        {
+          "name": "XOR all elements",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "title": "Number of 1 Bits",
+      "slug": "number-of-1-bits",
+      "leetcodeId": 191,
+      "difficulty": "Easy",
+      "category": "Bit Manipulation",
+      "patterns": [
+        "bit-manipulation"
+      ],
+      "approaches": [
+        {
+          "name": "n & (n-1) loop",
+          "time": "O(1)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Built-in bit count",
+          "time": "O(1)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "title": "Counting Bits",
+      "slug": "counting-bits",
+      "leetcodeId": 338,
+      "difficulty": "Easy",
+      "category": "Bit Manipulation",
+      "patterns": [
+        "bit-manipulation",
+        "1d-dp"
+      ],
+      "approaches": [
+        {
+          "name": "DP bits[i] = bits[i>>1] + i&1",
+          "time": "O(n)",
+          "space": "O(n)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 147,
+      "title": "Reverse Bits",
+      "slug": "reverse-bits",
+      "leetcodeId": 190,
+      "difficulty": "Easy",
+      "category": "Bit Manipulation",
+      "patterns": [
+        "bit-manipulation"
+      ],
+      "approaches": [
+        {
+          "name": "Bit-by-bit reverse",
+          "time": "O(1)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "title": "Missing Number",
+      "slug": "missing-number",
+      "leetcodeId": 268,
+      "difficulty": "Easy",
+      "category": "Bit Manipulation",
+      "patterns": [
+        "bit-manipulation"
+      ],
+      "approaches": [
+        {
+          "name": "XOR index and values",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        },
+        {
+          "name": "Sum formula",
+          "time": "O(n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "title": "Sum of Two Integers",
+      "slug": "sum-of-two-integers",
+      "leetcodeId": 371,
+      "difficulty": "Medium",
+      "category": "Bit Manipulation",
+      "patterns": [
+        "bit-manipulation"
+      ],
+      "approaches": [
+        {
+          "name": "XOR + carry loop",
+          "time": "O(1)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "title": "Reverse Integer",
+      "slug": "reverse-integer",
+      "leetcodeId": 7,
+      "difficulty": "Medium",
+      "category": "Bit Manipulation",
+      "patterns": [
+        "math-geometry"
+      ],
+      "approaches": [
+        {
+          "name": "Extract digits with overflow check",
+          "time": "O(log n)",
+          "space": "O(1)",
+          "optimal": true
+        }
+      ]
+    }
+  ]
+}
