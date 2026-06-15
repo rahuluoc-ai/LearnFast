@@ -18,6 +18,7 @@ export default function PatternCard({
   solved,
   onToggle,
   onPatternClick,
+  onOpenSolution,
 }) {
   const [expanded, setExpanded] = useState(false);
   const color = COLOR_MAP[pattern.color] || 'var(--misc)';
@@ -69,6 +70,7 @@ export default function PatternCard({
                 solved={solved.has(p.id)}
                 onToggle={() => onToggle(p.id)}
                 onPatternClick={onPatternClick}
+                onOpenSolution={onOpenSolution}
                 compact
               />
             ))}

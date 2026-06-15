@@ -1,0 +1,322 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+
+.hint {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.runBtn {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.runBtn:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.runBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.toolBtn {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.toolBtn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.toolBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.code {
+  width: 100%;
+  min-height: 280px;
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #1b1e26;
+  color: #e8eaed;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.5;
+  resize: vertical;
+  tab-size: 4;
+}
+
+.code:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.status {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.outputWrap {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.outputHeader {
+  padding: 6px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--faint);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.output {
+  margin: 0;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #0f1117;
+  color: #c8ccd4;
+}
+
+.output.error {
+  color: #fca5a5;
+}
+
+.resultsPanel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.resultsAllPass {
+  border-color: #86efac;
+}
+
+.resultsHasFail {
+  border-color: #fca5a5;
+}
+
+.congratsBanner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 14px;
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border-bottom: 1px solid #86efac;
+}
+
+.congratsIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--easy);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.congratsText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.congratsText strong {
+  font-size: 15px;
+  color: #14532d;
+  line-height: 1.3;
+}
+
+.congratsText span {
+  font-size: 12px;
+  color: #166534;
+}
+
+.summaryBar {
+  padding: 12px 14px;
+  background: #fee2e2;
+  border-bottom: 1px solid #fca5a5;
+}
+
+.summaryFailText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.summaryFailText strong {
+  font-size: 14px;
+  color: var(--hard);
+}
+
+.summaryFailText span {
+  font-size: 12px;
+  color: #991b1b;
+}
+
+.summaryPass {
+  background: #dcfce7;
+  color: var(--easy);
+}
+
+.summaryFail {
+  background: #fee2e2;
+  color: var(--hard);
+}
+
+.testList {
+  display: flex;
+  flex-direction: column;
+}
+
+.testRow {
+  border-top: 1px solid var(--line);
+}
+
+.testRowHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--paper);
+  border: none;
+  text-align: left;
+  font-size: 13px;
+}
+
+.testRowHeader:hover {
+  background: var(--bg);
+}
+
+.resultsAllPass .testRowHeader {
+  background: #f0fdf4;
+}
+
+.resultsAllPass .testRowHeader:hover {
+  background: #dcfce7;
+}
+
+.testPassed .testIcon {
+  color: var(--easy);
+}
+
+.testFailed .testIcon {
+  color: var(--hard);
+}
+
+.testIcon {
+  font-weight: 700;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.testLabel {
+  flex: 1;
+  font-weight: 600;
+}
+
+.testBadge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.badgePass {
+  background: #dcfce7;
+  color: var(--easy);
+}
+
+.badgeFail {
+  background: #fee2e2;
+  color: var(--hard);
+}
+
+.testChevron {
+  font-size: 10px;
+  color: var(--faint);
+}
+
+.testBody {
+  padding: 0 12px 12px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detailLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--faint);
+}
+
+.detailValue,
+.detailText {
+  margin: 0;
+  padding: 8px 10px;
+  background: #0f1117;
+  color: #c8ccd4;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.detailText {
+  font-family: var(--sans);
+}

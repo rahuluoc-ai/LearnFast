@@ -9,6 +9,7 @@ export default function PatternGrid({
   solved,
   onToggle,
   onPatternClick,
+  onOpenSolution,
 }) {
   const groups = [...new Set(patterns.map((p) => p.group))];
 
@@ -30,6 +31,7 @@ export default function PatternGrid({
                   solved={solved}
                   onToggle={onToggle}
                   onPatternClick={onPatternClick}
+                  onOpenSolution={onOpenSolution}
                 />
               ))}
           </div>

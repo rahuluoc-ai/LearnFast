@@ -7,6 +7,7 @@ export default function ProblemList({
   solved,
   onToggle,
   onPatternClick,
+  onOpenSolution,
 }) {
   if (problems.length === 0) {
     return (
@@ -28,6 +29,7 @@ export default function ProblemList({
             solved={solved.has(p.id)}
             onToggle={() => onToggle(p.id)}
             onPatternClick={onPatternClick}
+            onOpenSolution={onOpenSolution}
           />
         ))}
       </ul>

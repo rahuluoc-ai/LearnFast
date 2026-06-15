@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { filterProblems } from '../utils/filterProblems';
 import ProblemRow from './ProblemRow';
 import styles from './RoadmapView.module.css';
 
@@ -9,10 +10,16 @@ export default function RoadmapView({
   solved,
   onToggle,
   onPatternClick,
+  onOpenSolution,
   search,
   difficulty,
 }) {
   const [openCats, setOpenCats] = useState(() => new Set([categories[0]]));
+
+  const filtered = useMemo(
+    () => filterProblems(problems, { search, difficulty, patternMap }),
+    [problems, search, difficulty, patternMap]
+  );
 
   const toggleCat = (cat) => {
     setOpenCats((prev) => {
@@ -23,25 +30,13 @@ export default function RoadmapView({
     });
   };
 
-  const q = search.toLowerCase().trim();
-
   return (
     <div className={styles.roadmap}>
       <p className={styles.intro}>
         NeetCode recommended study order — work through each category before moving on.
       </p>
       {categories.map((cat, idx) => {
-        const catProbs = problems.filter((p) => {
-          if (p.category !== cat) return false;
-          if (difficulty !== 'All' && p.difficulty !== difficulty) return false;
-          if (!q) return true;
-          return (
-            p.title.toLowerCase().includes(q) ||
-            p.patterns.some((pid) =>
-              (patternMap[pid]?.name || '').toLowerCase().includes(q)
-            )
-          );
-        });
+        const catProbs = filtered.filter((p) => p.category === cat);
         const done = catProbs.filter((p) => solved.has(p.id)).length;
         const isOpen = openCats.has(cat);
 
@@ -69,6 +64,7 @@ export default function RoadmapView({
                     solved={solved.has(p.id)}
                     onToggle={() => onToggle(p.id)}
                     onPatternClick={onPatternClick}
+                    onOpenSolution={onOpenSolution}
                   />
                 ))}
               </ul>

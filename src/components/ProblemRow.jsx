@@ -8,10 +8,12 @@ export default function ProblemRow({
   solved,
   onToggle,
   onPatternClick,
+  onOpenSolution,
   compact = false,
 }) {
   const [open, setOpen] = useState(false);
   const diffClass = problem.difficulty.toLowerCase();
+  let optimalIdx = 0;
 
   return (
     <li className={`${styles.row} ${compact ? styles.compact : ''}`}>
@@ -22,26 +24,22 @@ export default function ProblemRow({
         <button
           type="button"
           className={styles.titleBtn}
-          onClick={() => setOpen(!open)}
+          onClick={() => onOpenSolution?.(problem, 0)}
+          title="Open solution panel"
         >
           <span className={styles.title}>{problem.title}</span>
           <span className={`${styles.diff} ${styles[diffClass]}`}>
             {problem.difficulty[0]}
           </span>
-          {!compact && (
-            <span className={styles.chevron}>{open ? '▲' : '▼'}</span>
-          )}
         </button>
-        {compact && (
-          <button
-            type="button"
-            className={styles.expandBtn}
-            onClick={() => setOpen(!open)}
-            aria-label="Show approaches"
-          >
-            {open ? '▲' : '▼'}
-          </button>
-        )}
+        <button
+          type="button"
+          className={compact ? styles.expandBtn : styles.chevron}
+          onClick={() => setOpen(!open)}
+          aria-label={open ? 'Hide approaches' : 'Show approaches'}
+        >
+          {open ? '▲' : '▼'}
+        </button>
       </div>
 
       {!compact && (
@@ -71,23 +69,45 @@ export default function ProblemRow({
             <a href={neetcodeUrl(problem)} target="_blank" rel="noreferrer">
               NeetCode
             </a>
+            {onOpenSolution && (
+              <button
+                type="button"
+                className={styles.solutionBtn}
+                onClick={() => onOpenSolution(problem, 0)}
+              >
+                Full solution →
+              </button>
+            )}
           </div>
           <div className={styles.approaches}>
             <strong>Approaches</strong>
-            {problem.approaches.map((a) => (
-              <div
-                key={a.name}
-                className={`${styles.approach} ${a.optimal ? styles.optimal : ''}`}
-              >
-                <span className={styles.approachName}>
-                  {a.name}
-                  {a.optimal && <span className={styles.optBadge}>optimal</span>}
-                </span>
-                <span className={styles.complexity}>
-                  {a.time} · {a.space}
-                </span>
-              </div>
-            ))}
+            {problem.approaches.map((a) => {
+              const currentOptIdx = a.optimal ? optimalIdx++ : -1;
+              const Wrapper = a.optimal && onOpenSolution ? 'button' : 'div';
+              return (
+                <Wrapper
+                  key={a.name}
+                  type={a.optimal && onOpenSolution ? 'button' : undefined}
+                  className={`${styles.approach} ${a.optimal ? styles.optimal : ''} ${
+                    a.optimal && onOpenSolution ? styles.approachBtn : ''
+                  }`}
+                  onClick={
+                    a.optimal && onOpenSolution
+                      ? () => onOpenSolution(problem, currentOptIdx)
+                      : undefined
+                  }
+                  title={a.optimal && onOpenSolution ? 'Open in solution panel' : undefined}
+                >
+                  <span className={styles.approachName}>
+                    {a.name}
+                    {a.optimal && <span className={styles.optBadge}>optimal</span>}
+                  </span>
+                  <span className={styles.complexity}>
+                    {a.time} · {a.space}
+                  </span>
+                </Wrapper>
+              );
+            })}
           </div>
         </div>
       )}

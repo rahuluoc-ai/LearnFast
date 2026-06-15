@@ -37,7 +37,7 @@ export default function Header({
         <input
           type="search"
           className={styles.search}
-          placeholder="Search problems, patterns, algorithms…"
+          placeholder="Search problems, patterns, analogies, steps…"
           value={search}
           onChange={(e) => onSearch(e.target.value)}
         />

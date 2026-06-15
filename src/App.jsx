@@ -1,6 +1,7 @@
 import { useState, useMemo, useCallback } from 'react';
 import patternsData from '../data/patterns.json';
 import neetcodeData from '../data/neetcode150.json';
+import { filterProblems } from './utils/filterProblems';
 import { useProgress } from './hooks/useProgress';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -8,10 +9,12 @@ import CategoryStrip from './components/CategoryStrip';
 import PatternGrid from './components/PatternGrid';
 import ProblemList from './components/ProblemList';
 import RoadmapView from './components/RoadmapView';
+import MindmapView from './components/MindmapView';
+import ProblemSolutionPanel from './components/ProblemSolutionPanel';
 import TriagePanel from './components/TriagePanel';
 import styles from './App.module.css';
 
-const TABS = ['Patterns', 'Problems', 'Roadmap'];
+const TABS = ['Patterns', 'Problems', 'Roadmap', 'Mindmap'];
 
 export default function App() {
   const { problems } = neetcodeData;
@@ -23,6 +26,8 @@ export default function App() {
   const [difficulty, setDifficulty] = useState('All');
   const [patternFilter, setPatternFilter] = useState(null);
   const [highlightPattern, setHighlightPattern] = useState(null);
+  const [panelProblem, setPanelProblem] = useState(null);
+  const [selectedApproachIndex, setSelectedApproachIndex] = useState(0);
   const { solved, toggle, count } = useProgress(problems.length);
 
   const patternMap = useMemo(
@@ -41,24 +46,26 @@ export default function App() {
     return map;
   }, [problems, patterns]);
 
-  const filteredProblems = useMemo(() => {
-    const q = search.toLowerCase().trim();
-    return problems.filter((p) => {
-      if (category !== 'All' && p.category !== category) return false;
-      if (difficulty !== 'All' && p.difficulty !== difficulty) return false;
-      if (patternFilter && !p.patterns.includes(patternFilter)) return false;
-      if (!q) return true;
-      const inTitle = p.title.toLowerCase().includes(q);
-      const inCat = p.category.toLowerCase().includes(q);
-      const inPatterns = p.patterns.some((pid) =>
-        (patternMap[pid]?.name || pid).toLowerCase().includes(q)
-      );
-      const inApproaches = p.approaches.some((a) =>
-        a.name.toLowerCase().includes(q)
-      );
-      return inTitle || inCat || inPatterns || inApproaches;
-    });
-  }, [problems, search, category, difficulty, patternFilter, patternMap]);
+  const filteredProblems = useMemo(
+    () =>
+      filterProblems(problems, {
+        search,
+        category,
+        difficulty,
+        patternFilter,
+        patternMap,
+      }),
+    [problems, search, category, difficulty, patternFilter, patternMap]
+  );
+
+  const openSolution = useCallback((problem, approachIndex = 0) => {
+    setPanelProblem(problem);
+    setSelectedApproachIndex(approachIndex);
+  }, []);
+
+  const closeSolution = useCallback(() => {
+    setPanelProblem(null);
+  }, []);
 
   const handlePatternClick = useCallback((patternId) => {
     setPatternFilter(patternId);
@@ -127,6 +134,7 @@ export default function App() {
                 solved={solved}
                 onToggle={toggle}
                 onPatternClick={handlePatternClick}
+                onOpenSolution={openSolution}
               />
             </>
           )}
@@ -137,6 +145,7 @@ export default function App() {
               solved={solved}
               onToggle={toggle}
               onPatternClick={handlePatternClick}
+              onOpenSolution={openSolution}
             />
           )}
           {tab === 'Roadmap' && (
@@ -147,13 +156,42 @@ export default function App() {
               solved={solved}
               onToggle={toggle}
               onPatternClick={handlePatternClick}
+              onOpenSolution={openSolution}
               search={search}
               difficulty={difficulty}
+            />
+          )}
+          {tab === 'Mindmap' && (
+            <MindmapView
+              problems={problems}
+              categories={categories}
+              patterns={patterns}
+              patternMap={patternMap}
+              solved={solved}
+              search={search}
+              category={category}
+              difficulty={difficulty}
+              patternFilter={patternFilter}
+              onPatternClick={handlePatternClick}
+              onOpenSolution={openSolution}
             />
           )}
         </main>
         </div>
       </div>
+
+      {panelProblem && (
+        <ProblemSolutionPanel
+          problem={panelProblem}
+          selectedApproachIndex={selectedApproachIndex}
+          onSelectApproach={setSelectedApproachIndex}
+          onClose={closeSolution}
+          patternMap={patternMap}
+          onOpenPatterns={handlePatternClick}
+          solved={solved.has(panelProblem.id)}
+          onToggle={() => toggle(panelProblem.id)}
+        />
+      )}
     </div>
   );
 }
