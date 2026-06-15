@@ -2,6 +2,8 @@
 
 Fast interview prep — read the signal, reach for the tool.
 
+**Live app:** [https://ilearnfast.netlify.app/](https://ilearnfast.netlify.app/)
+
 LearnFast maps all [**NeetCode 150**](https://neetcode.io/practice/practice/neetcode150) problems to cheatsheet patterns, optimal algorithms, and step-by-step solution outlines. Use the interactive React app for study and progress tracking, or the printable cheatsheets for quick reference.
 
 ## Quick start
@@ -34,7 +36,8 @@ Progress (solved checkboxes) is saved in `localStorage`.
 
 | Format | File | Best for |
 |---|---|---|
-| **React app** | `npm run dev` | Interactive study, mindmap, solution panel |
+| **React app (live)** | [ilearnfast.netlify.app](https://ilearnfast.netlify.app/) | Interactive study, mindmap, solution panel, Python playground |
+| **React app (local)** | `npm run dev` | Local development |
 | **HTML** | [interview-pattern-cheatsheet.html](interview-pattern-cheatsheet.html) | Browser viewing, print / save as PDF |
 | **Markdown** | [CHEATSHEET.md](CHEATSHEET.md) | GitHub browsing, quick reference |
 | **PDF** | [Interview Pattern Cheatsheet.pdf](Interview%20Pattern%20Cheatsheet.pdf) | Print export of the HTML cheatsheet |
@@ -70,4 +73,4 @@ LearnFast/
 
 ## Tech stack
 
-React 18 · Vite · CSS modules · no backend — static deploy to GitHub Pages or any static host.
+React 18 · Vite · CSS modules · no backend — deployed on [Netlify](https://ilearnfast.netlify.app/).
