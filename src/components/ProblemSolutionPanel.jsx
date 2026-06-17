@@ -1,9 +1,15 @@
 import { useState, useMemo, lazy, Suspense } from 'react';
 import { leetcodeUrl, neetcodeUrl } from '../utils/links';
+import {
+  buildProblemFlow,
+  getProblemScenarioCount,
+  hasProblemFlow,
+} from '../animations/problemTraceBuilder';
 import PatternTooltip from './PatternTooltip';
 import styles from './ProblemSolutionPanel.module.css';
 
 const PythonEditor = lazy(() => import('./PythonEditor'));
+const FlowPlayer = lazy(() => import('./FlowPlayer'));
 
 const DIFF_CLASS = { Easy: 'easy', Medium: 'medium', Hard: 'hard' };
 
@@ -18,6 +24,7 @@ export default function ProblemSolutionPanel({
   onToggle,
 }) {
   const [panelView, setPanelView] = useState('guide');
+  const [scenarioIndex, setScenarioIndex] = useState(0);
 
   const optimalApproaches = useMemo(
     () => problem.approaches.filter((a) => a.optimal),
@@ -30,12 +37,21 @@ export default function ProblemSolutionPanel({
   );
   const current = optimalApproaches[safeIndex];
   const diff = DIFF_CLASS[problem.difficulty] || 'medium';
+  const showFlow = hasProblemFlow(problem);
+  const scenarioCount = getProblemScenarioCount(problem);
+
+  const problemFlow = useMemo(() => {
+    if (!current) return null;
+    return buildProblemFlow(problem, current, scenarioIndex);
+  }, [problem, current, scenarioIndex]);
+
+  const isWide = panelView === 'python' || panelView === 'flow';
 
   return (
     <>
       <div className={styles.backdrop} onClick={onClose} aria-hidden="true" />
       <aside
-        className={`${styles.panel} ${panelView === 'python' ? styles.panelWide : ''}`}
+        className={`${styles.panel} ${isWide ? styles.panelWide : ''}`}
         role="dialog"
         aria-label={`Solution: ${problem.title}`}
       >
@@ -63,6 +79,17 @@ export default function ProblemSolutionPanel({
             >
               Guide
             </button>
+            {showFlow && (
+              <button
+                type="button"
+                role="tab"
+                aria-selected={panelView === 'flow'}
+                className={`${styles.panelTab} ${panelView === 'flow' ? styles.panelTabActive : ''}`}
+                onClick={() => setPanelView('flow')}
+              >
+                Flow
+              </button>
+            )}
             <button
               type="button"
               role="tab"
@@ -76,7 +103,7 @@ export default function ProblemSolutionPanel({
         </header>
 
         <div className={styles.body}>
-          {panelView === 'guide' ? (
+          {panelView === 'guide' && (
             <>
               <section className={styles.section}>
                 <h3 className={styles.sectionTitle}>Question</h3>
@@ -157,6 +184,15 @@ export default function ProblemSolutionPanel({
                     ) : (
                       <p className={styles.noSteps}>Step outline not available yet.</p>
                     )}
+                    {showFlow && (
+                      <button
+                        type="button"
+                        className={styles.flowLinkBtn}
+                        onClick={() => setPanelView('flow')}
+                      >
+                        Watch step-by-step flow →
+                      </button>
+                    )}
                     <a
                       href={neetcodeUrl(problem)}
                       target="_blank"
@@ -169,7 +205,54 @@ export default function ProblemSolutionPanel({
                 )}
               </section>
             </>
-          ) : (
+          )}
+
+          {panelView === 'flow' && problemFlow && (
+            <section className={styles.section}>
+              {optimalApproaches.length > 1 && (
+                <div className={styles.tabs} role="tablist">
+                  {optimalApproaches.map((a, i) => (
+                    <button
+                      key={a.name}
+                      type="button"
+                      role="tab"
+                      aria-selected={i === safeIndex}
+                      className={`${styles.tab} ${i === safeIndex ? styles.tabActive : ''}`}
+                      onClick={() => onSelectApproach(i)}
+                    >
+                      {a.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+              {scenarioCount > 1 && (
+                <div className={styles.scenarioRow}>
+                  <span className={styles.scenarioLabel}>Scenario</span>
+                  {Array.from({ length: scenarioCount }, (_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      className={`${styles.scenarioBtn} ${scenarioIndex === i ? styles.scenarioActive : ''}`}
+                      onClick={() => setScenarioIndex(i)}
+                    >
+                      Test {i + 1}
+                    </button>
+                  ))}
+                </div>
+              )}
+              <Suspense fallback={<p className={styles.loading}>Loading animation…</p>}>
+                <FlowPlayer
+                  key={`${problem.id}-${safeIndex}-${scenarioIndex}`}
+                  title={problemFlow.title}
+                  subtitle={problemFlow.subtitle}
+                  frames={problemFlow.frames}
+                  compact
+                />
+              </Suspense>
+            </section>
+          )}
+
+          {panelView === 'python' && (
             <section className={styles.section}>
               <h3 className={styles.sectionTitle}>Python playground</h3>
               <Suspense fallback={<p className={styles.loading}>Loading editor…</p>}>

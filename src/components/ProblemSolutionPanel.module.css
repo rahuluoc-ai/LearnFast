@@ -278,6 +278,58 @@
   font-weight: 600;
 }
 
+.flowLinkBtn {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: #eef0ff;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.flowLinkBtn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.scenarioRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.scenarioLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--faint);
+  margin-right: 4px;
+}
+
+.scenarioBtn {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.scenarioActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 .loading {
   font-size: 13px;
   color: var(--muted);

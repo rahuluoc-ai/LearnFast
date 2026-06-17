@@ -1,0 +1,271 @@
+.stage {
+  position: relative;
+  min-height: 140px;
+  padding: 12px 8px 8px;
+}
+
+.arrayRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cell {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cellActive {
+  border-color: var(--accent);
+  background: #eef0ff;
+}
+
+.cellFlash {
+  border-color: var(--hard);
+  background: #fee2e2;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
+
+.inWindow {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.cellVal {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pointer {
+  position: absolute;
+  bottom: -18px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.pointer.lo {
+  color: var(--accent);
+}
+
+.pointer.hi {
+  color: var(--tree);
+}
+
+.sidePanel {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.sideLabel {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+
+.chipRow,
+.queueRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  background: #eef0ff;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.empty {
+  font-size: 12px;
+  color: var(--faint);
+  font-style: italic;
+}
+
+.sumLine {
+  text-align: center;
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.windowBracket {
+  position: absolute;
+  top: 8px;
+  height: 54px;
+  border: 2px dashed var(--tree);
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.windowInvalid {
+  border-color: var(--hard);
+  background: rgba(254, 226, 226, 0.35);
+}
+
+.stageStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-height: 140px;
+  padding: 12px;
+}
+
+.inputRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+
+.char {
+  font-family: var(--mono);
+  font-size: 16px;
+  width: 28px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+}
+
+.charActive {
+  border-color: var(--accent);
+  background: #eef0ff;
+  font-weight: 700;
+}
+
+.charDone {
+  opacity: 0.45;
+}
+
+.stackCol {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 4px;
+  min-height: 80px;
+}
+
+.stackItem {
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 6px 16px;
+  border: 2px solid var(--struct);
+  border-radius: 6px;
+  background: #f5f3ff;
+  font-weight: 600;
+}
+
+.invalidNote {
+  color: var(--hard);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.treeLevels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.treeRow {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.treeNode {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--paper);
+}
+
+.treeNode.visited {
+  background: #dcfce7;
+  border-color: var(--tree);
+}
+
+.treeNode.current {
+  border-color: var(--accent);
+  background: #eef0ff;
+}
+
+.dpRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.dpCell {
+  width: 56px;
+  padding: 8px 4px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  text-align: center;
+  background: var(--paper);
+}
+
+.dpActive {
+  border-color: var(--accent);
+}
+
+.dpLabel {
+  display: block;
+  font-size: 9px;
+  color: var(--faint);
+  margin-bottom: 4px;
+}
+
+.dpVal {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.genericStage {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}

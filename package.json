@@ -11,6 +11,7 @@
     "apply:python": "node scripts/apply-neetcode150-python.cjs"
   },
   "dependencies": {
+    "framer-motion": "^12.40.0",
     "pyodide": "^0.27.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

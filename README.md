@@ -20,14 +20,14 @@ npm run validate # check all problem summaries, solution steps + analogies
 
 | Tab | What it does |
 |---|---|
-| **Patterns** | 20 cheatsheet cards (signals, do/use/gotcha) with a **Prove it** list of NeetCode problems per pattern |
+| **Patterns** | 20 cheatsheet cards (signals, do/use/gotcha) with a **Prove it** list and **Watch concept flow** animations |
 | **Problems** | All 150 problems — search, filter by difficulty/category, expand to see optimal approaches |
 | **Roadmap** | NeetCode study order — accordion by category with solved progress |
 | **Mindmap** | Visual tree: category/pattern → problem → optimal algo branches (multi-algo problems show every path) |
 
 **Mindmap interactions:**
 - **Hover** a pattern name → floating tooltip with full cheatsheet details (not clipped by scroll)
-- **Click** a problem → slide-over panel with question summary, pattern tooltips, analogy, solution steps, and a **Python** tab to write and run code
+- **Click** a problem → slide-over panel with question summary, pattern tooltips, analogy, solution steps, **Flow** animation, and a **Python** tab
 - **Click** an approach leaf → same panel, with that algo tab pre-selected when multiple optimal solutions exist
 
 Progress (solved checkboxes) is saved in `localStorage`.
@@ -73,4 +73,4 @@ LearnFast/
 
 ## Tech stack
 
-React 18 · Vite · CSS modules · no backend — deployed on [Netlify](https://ilearnfast.netlify.app/).
+React 18 · Vite · Framer Motion · CSS modules · no backend — deployed on [Netlify](https://ilearnfast.netlify.app/).

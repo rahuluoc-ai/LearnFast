@@ -67,6 +67,24 @@
   padding-top: 8px;
 }
 
+.flowBtn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: #eef0ff;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.flowBtn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
 .proveBtn {
   width: 100%;
   text-align: left;

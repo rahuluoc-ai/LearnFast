@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
+import { getPatternAnimation, hasPatternAnimation } from '../animations/patternAnimationDefs';
 import ProblemRow from './ProblemRow';
 import styles from './PatternCard.module.css';
+
+const ConceptFlowModal = lazy(() => import('./ConceptFlowModal'));
 
 const COLOR_MAP = {
   arr: 'var(--arr)',
@@ -21,7 +24,10 @@ export default function PatternCard({
   onOpenSolution,
 }) {
   const [expanded, setExpanded] = useState(false);
+  const [showFlow, setShowFlow] = useState(false);
   const color = COLOR_MAP[pattern.color] || 'var(--misc)';
+  const animation = getPatternAnimation(pattern.id);
+  const canWatchFlow = hasPatternAnimation(pattern.id);
 
   return (
     <article
@@ -51,6 +57,12 @@ export default function PatternCard({
         {pattern.gotcha}
       </div>
 
+      {canWatchFlow && (
+        <button type="button" className={styles.flowBtn} onClick={() => setShowFlow(true)}>
+          Watch concept flow →
+        </button>
+      )}
+
       <div className={styles.prove}>
         <button
           type="button"
@@ -77,6 +89,12 @@ export default function PatternCard({
           </ul>
         )}
       </div>
+
+      {showFlow && animation && (
+        <Suspense fallback={null}>
+          <ConceptFlowModal animation={animation} onClose={() => setShowFlow(false)} />
+        </Suspense>
+      )}
     </article>
   );
 }
